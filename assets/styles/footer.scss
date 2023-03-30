@@ -1,10 +1,16 @@
 .site-footer {
-    display: flex;
-    flex-flow: row;
+    // display: flex;
+    // flex-flow: row;
+    width: 99%;
     background-color: #333;
-    justify-content: center;
+    height: 3rem;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 5px;
 }
 
 .site-footer > p {
-    font-size: 0.7rem;
+    font-size: 1rem;
+    color: #faebd7;
+    text-align: center;
 }

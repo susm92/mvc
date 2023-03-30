@@ -2,6 +2,10 @@
 @import 'footer.scss';
 @import 'typography.scss';
 
+html, body {
+    min-height: 100%;
+}
+
 body {
     background-color: #f3f3f3;
 }

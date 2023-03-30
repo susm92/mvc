@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>About</h1>
+
+    <div class="container">
+        <div class="about-text">    
+            <p>Följande hemsida har skapats i samband med kursen MVC som hålls på BTH.</p>
+            <p>Vi har blivit ombedda att med teknikerna Symfony, twig, SASS, NPM m.m skapa en hemsida och då även underhålla den github. Följande hemsida kommer bara växa i takt med att mer och mer information läggs till.</p>
+        </div>
+
+        <div class="side">
+            <h3>Länkar</h3>
+            <div class="links">
+                <p>Kursens github repo finns <a href="https://github.com/dbwebb-se/mvc">HÄR</a>.</p>
+
+                <p>Länk till mitt github-repo hittas <a href="">HÄR<a/>.</p>
+            </div>
+
+            <div class="imgs">
+                <img class="about-img" src="{{ asset('img/code.jpg') }}" alt="random code">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

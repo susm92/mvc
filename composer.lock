@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ca1d63705055858831da68ef4a707b9",
+    "content-hash": "9e5d6e49a886c272d1b9b2dbbd6bfb58",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1558,71 +1558,6 @@
                 }
             ],
             "time": "2023-02-06T13:46:10+00:00"
-        },
-        {
-            "name": "mos/cimage",
-            "version": "v0.8.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mosbth/cimage.git",
-                "reference": "1666ea14125fba1fd40ce35389fce7f9c1747f56"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mosbth/cimage/zipball/1666ea14125fba1fd40ce35389fce7f9c1747f56",
-                "reference": "1666ea14125fba1fd40ce35389fce7f9c1747f56",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "suggest": {
-                "ext-curl": "*",
-                "ext-exif": "*",
-                "ext-gd": "*",
-                "ext-imagick": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "defines.php",
-                    "functions.php"
-                ],
-                "classmap": [
-                    "CImage.php",
-                    "CHttpGet.php",
-                    "CRemoteImage.php",
-                    "CWhitelist.php",
-                    "CAsciiArt.php",
-                    "CCache.php",
-                    "CFastTrackCache.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mikael Roos",
-                    "email": "me@mikaelroos.se",
-                    "homepage": "http://mikaelroos.se",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Process, scale, resize, crop and filter images.",
-            "homepage": "http://dbwebb.se/opensource/cimage",
-            "keywords": [
-                "gd",
-                "image",
-                "imageprocessing"
-            ],
-            "support": {
-                "docs": "http://dbwebb.se/opensource/cimage",
-                "issues": "https://github.com/mosbth/cimage/issues",
-                "source": "https://github.com/mosbth/cimage/tree/v0.8.5"
-            },
-            "time": "2022-11-17T15:08:48+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Deck\Card;
+use App\Deck\DeckOfCards;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,7 @@ class CardGameController extends AbstractController
         return $this->render('cardGame/home.html.twig');
     }
 
-    #[Route('game/card/test/draw', name:'test_draw')]
+    #[Route('card/draw', name:'draw')]
     public function testDraw(): Response
     {
         $card = new Card();
@@ -24,8 +25,34 @@ class CardGameController extends AbstractController
         $data = [
             "card" => $card->draw(),
             "showValue" => $card->showValue(),
+            "cardAmount" => $card->getAmount(),
         ];
 
-        return $this->render('cardGame/test/draw.html.twig', $data);
+        return $this->render('cardGame/sites/draw.html.twig', $data);
+    }
+
+    #[Route('card/deck', name: 'deck')]
+    public function testDeck(): Response
+    {
+        $deck = new DeckOfCards();
+
+        $data = [
+            "deck" => $deck->showDeck(),
+            "count" => sizeof($deck->showDeck()),
+        ];
+
+        return $this->render('cardGame/sites/deck.html.twig', $data);
+    }
+
+    #[Route('card/shuffle', name: 'shuffle')]
+    public function shuffleDeck(): Response
+    {
+        $deck = new DeckOfCards();
+
+        $data = [
+            "deck" => $deck->shuffleDeck(),
+        ];
+
+        return $this->render('cardGame/sites/shuffle.html.twig', $data);
     }
 }

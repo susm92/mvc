@@ -9,12 +9,11 @@
 
 <p>These are the routes used in developing this game.</p>
 
-
-<p>Test: <span class="cards" style="font-size: 100px;">&#x1F0DA</span></p>
-<p>Test: <span class="cards" style="font-size: 100px;">&#127179</span></p>
-<p><span style="font-size: 5rem;">A&#9824</span></p>
-<p><span style="font-size: 5rem;">A&#x2660</span></p>
-<p><span style="font-size: 5rem;">&#x2665&#xFE0F</span></p>
-
+<ul>
+    <li><a href="{{ path('deck') }}">Deck of cards</li>
+    <li><a href="{{ path('shuffle') }}">Shuffles, then shows the deck</li>
+    <li><a href="{{ path('draw') }}">Draw a card</li>
+    {# <li><a href="{{ path('draw amount') }}">Draw many cards</li> #}
+</ul>
 
 {% endblock %}

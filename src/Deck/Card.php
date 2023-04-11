@@ -20,10 +20,16 @@ class Card
     public function draw(): void
     {
         $this->cardValue = $this->value[array_rand($this->value, 1)];
+        unset($this->value[array_search($this->cardValue, $this->value)]);
     }
 
     public function showValue(): string
     {
         return $this->cardValue;
+    }
+
+    public function getAmount(): int
+    {
+        return count($this->value);
     }
 }

@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<h1>Draw multiple of cards</h1>
+
+{# <p>You drew {{ num_dices }} cards. Here are the values of the cards at hand.</p> #}
+<p>Test of drawing many cards</p>
+
+<ul class="deck">
+{% for cards in hand %}
+    <li> [{{ cards }}] </li>
+{% endfor %}
+</ul>
+
+<p>There are {{ amount }} cards left in the deck.</p>
+
+<p>Try to draw 
+    {# <a href="{{ path('test_roll_num_dices', {num: 1}) }}">1</a> #}
+    or
+    {# <a href="{{ path('test_roll_num_dices', {num: 5}) }}">5</a> #}
+    or 
+    {# <a href="{{ path('test_roll_num_dices', {num: 10}) }}">10</a> #}
+    cards.
+</p>
+{% endblock %}

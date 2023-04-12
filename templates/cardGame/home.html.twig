@@ -13,7 +13,7 @@
     <li><a href="{{ path('deck') }}">Deck of cards</li>
     <li><a href="{{ path('shuffle') }}">Shuffles, then shows the deck</li>
     <li><a href="{{ path('draw') }}">Draw a card</li>
-    {# <li><a href="{{ path('draw amount') }}">Draw many cards</li> #}
+    <li><a href="{{ path('number_cards', {num:5}) }}">Draw many cards</li>
 </ul>
 
 {% endblock %}

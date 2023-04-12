@@ -5,15 +5,15 @@
 {% block body %}
 <h1>Entire deck of cards</h1>
 
-<p>Below if the deck of cards displayed.</p>
+<p>Below is the deck of cards displayed.</p>
 
 <ul class="deck">
     {% for i in 0..51 %}
         {% if i % 13 == 0 %}
             <br><br>
-            <li>{{ deck[i] }}</li>
+            <li> [{{ deck[i] }}] </li>
         {% else %}
-            <li>{{ deck[i] }}</li>
+            <li> [{{ deck[i] }}] </li>
         {% endif %}
     {% endfor %}
 </ul>

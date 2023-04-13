@@ -25,6 +25,16 @@
             Symfoni, TWIG, objektorienterad PHP, autoloader
         </p>
     <h2 id="kmom02">Kmom02</h2>
+        <p>
+            I följande moment har vi fått använda oss av konstruktioner så som arv, komposition, interface och trait för att lösa veckans uppgift. Denna veckan har vi fått ägna oss åt att försöka föreställa en kortlek, där vi skapat sidor för att då försöka plocka nya kort, bland hela kortleken och även då visa ett antal kort.
+            <br><br>
+            Om vi börjar med komposition, så finns där två typer av kompositioner, stakt kopplade som då kallas för aggregat, eller svagt kopplade. Ett exempel på detta är en lägenhet, i lägenheten finns där ett antal rum, vi kan inte ta rummen från lägenheten och så fort lägenheten försvinner (rivs) så försvinner även rummen, detta är då starkt kopplade objekt. Talar vi istället om personerna som bor i en lägenhet så är de inte i lika starkt beroende då de exempelvis kan flytta till en annan lägenhet, detta är då en svag koppling. I php kan detta som som metoder som då instansierar objekt för en annan klass. Brukar vanligtvis kunna hittas med "has a" benämningen.
+            Arv till skillnad från ovan brukar vanligtvis användas för att utöka en basklass med extra funktionalitet eller metoder, benämningen här brukar gå under 'is a'. När det kommer sig till arv så är det så att den ärvda klassen (subklassen) vanligtvis har tillgång till alla medlemsvariabler och metoder (så länge de inte är privata i basklassen) från basklassen. I php används detta med benämningen 'extends'. När det sen kommer sig till Traits och Interface, så är det så att ett trait är väldigt likt arv men är då enbart fyllt med metoder och medlemsvariabler som i sig kan nyttjas av en annan klass för att utöka dess funktionalitet. Vi kommer åt funktionalitet av ett trait från en klass med use 'trait-namnet'. Medan ett interface mer är tänkt som ett kontrakt där en klass lovar att erbjuda en viss uppsättning metoder, istället för class 'namn', benämns dessa för interface 'namn'.
+            <br><br>
+            Jag använde mig exempelvis av komposition och arv för att lösa denna veckans uppgift, min huvudklass är i mina ögon Card klassen, denna ärver i sin tur ner till DeckOfCards, som då är en samling av kort. CardHand har i sin tur en aggregation mot klassen Card, där CardHand använder sig av ett Card-objekt för att kunna fungera som tänkt.
+            <br><br>
+            Överlag vill jag påstå att jag är nöjd med min applikation även om den kändes väldigt stor och hade en hel del motgångar, nu i efterhand kan jag se att där återanvänds kod lite här och där i vissa routes.. det är nog en idé att till nästa kmom när mer tid finnes få iordning på detta så att jag kan få det att se snyggare ut. Veckans uppgift har lyckats ta upp hur sessioner används i PHP/ TWIG, Routes med Request/ Session, arv i PHP.
+        </p>
     <h2 id="kmom03">Kmom03</h2>
     <h2 id="kmom04">Kmom04</h2>
     <h2 id="kmom05">Kmom05</h2>

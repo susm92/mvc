@@ -7,13 +7,27 @@
 
 <p>Hi, the following is a simple cardgame, where you will be able to draw cards until you choose to restart the game. There are 52 cards in this game, but you will be able to draw cards until there are no left. Here are the <a href="https://sv.wikipedia.org/wiki/Kortlek">basics of a deck of cards on Wikipedia</a>.</p>
 
+<p>
+    For this exercise I have three classes that are used in order for me to retrieve the information required for the different sites, the main class in my mind is the class named <strong>Card</strong>. Here is where the card-object is initiated and later assigned a value so that we can use it in our game.
+    <br><br>
+    In order to hold our cards I have an other class named <strong>CardHand</strong>, it has methods used to store the card object and draw more cards, which is later stored in an array in the class. This class has a strong connection to the <strong>Card</strong> class, because it holds the cards needed for us to play the game, which makes it so that the relationship is a composition.
+    <br><br>
+    Lastly I use a class named <strong>DeckOfCards</strong> which inherits the array of values from it's parents class and is used to display the whole deck and which also does shuffle the deck.
+    
+</p>
+
+<p>Here is a UML diagram on how i've tried to implement the game</p>
+<br><br>
+<img class="uml-img-kmom02" src="{{ asset('img/uml_kmom02.png') }}" alt="uml kmom02">
+<br><br>
+
 <p>These are the routes used in developing this game.</p>
 
 <ul>
-    <li><a href="{{ path('deck') }}">Deck of cards</li>
-    <li><a href="{{ path('shuffle') }}">Shuffles, then shows the deck</li>
-    <li><a href="{{ path('draw') }}">Draw a card</li>
-    <li><a href="{{ path('number_cards', {num:5}) }}">Draw many cards</li>
+    <li><a href="{{ path('deck') }}">Deck of cards</a></li>
+    <li><a href="{{ path('shuffle') }}">Shuffles, then shows the deck</a></li>
+    <li><a href="{{ path('draw') }}">Draw a card</a></li>
+    <li><a href="{{ path('number_cards', {num:5}) }}">Draw many cards</a></li>
 </ul>
 
 {% endblock %}

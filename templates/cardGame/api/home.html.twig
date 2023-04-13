@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}API Block{% endblock %}
+
+{% block body %}
+<h1>API Home</h1>
+
+<p>Below are all the JSON routes this website offers, you can read a bit of what all redirects before clicking on them</a>.</p>
+
+<form method="post" action="">
+    <ul class="api-deck">
+        <li>
+            <input type="submit" name="quote" value="Quote"
+                onClick="this.form.action='{{ path('api_quote') }}';this.form.method='get';"
+            > -- Directs the user to a website, which shows a json response with a random quote, together with the date and time of the current day.
+        </li>
+        <li>
+            <input type="submit" name="deck" value="Deck"
+                onClick="this.form.action='{{ path('api_deck') }}';this.form.method='get';"
+            > -- Shows the entire deck of cards, this shows the deck sorted by color in rising size.
+        </li>
+        <li>
+            <input type="submit" name="shuffle" value="Shuffle"
+                onClick="this.form.action='{{ path('api_shuffle_post') }}';"
+            > -- Shuffles the entire deck and later returns an JSON structure of the deck, does also restore the deck.
+        </li>
+        <li>
+            <input type="submit" name="draw" value="Draw"
+                onClick="this.form.action='{{ path('api_deck_draw_post') }}';"
+            > -- Draws one card from the deck, each time a card is decreased from the current deck.
+        </li>
+        <li>
+            <input type="submit" name="number" value="Number"
+                onClick="this.form.action='{{ path('api_number_cards_post', {num: 5}) }}';"
+            > -- Draws an amount of cards from deck, per default it's set to 5, you can edit the URL to draw even more cards.
+        </li>
+    </ul>
+</form>
+
+{% endblock %}

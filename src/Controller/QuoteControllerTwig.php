@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuoteControllerTwig
 {
-    #[Route("/api/quote")]
+    #[Route("/api/quote", name: "api_quote")]
     public function jsonNumber(): Response
     {
         $quotes = [

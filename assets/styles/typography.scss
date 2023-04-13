@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Lato&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+3&display=swap');
 
 $base-line-height: 1;
 $base-font-size: 1.25rem;
 $vertical-rhythm: $base-line-height * $base-font-size;
-$brodtext: 'Montserrat', sans-serif;
-$rubriker: 'Alkatra', cursive;;
+$brodtext: 'Roboto', sans-serif;
+$rubriker: 'Source Sans 3', sans-serif;
 
 body { 
   line-height: $base-line-height;
@@ -15,6 +15,7 @@ p {
   font-size: $base-font-size;
   margin-bottom: $vertical-rhythm;
   font-family: $brodtext;
+  color: #444;
 }
 
 h1 {

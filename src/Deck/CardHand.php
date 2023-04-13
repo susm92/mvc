@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Deck;
+
 use App\Deck\Card;
 
 class CardHand

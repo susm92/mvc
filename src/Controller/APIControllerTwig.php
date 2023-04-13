@@ -18,8 +18,7 @@ class APIControllerTwig extends AbstractController
     #[Route('/api', name: 'api_home', methods: ['GET'])]
     public function apiHome(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $card = new Card();
         $hand = new CardHand();
 
@@ -51,8 +50,7 @@ class APIControllerTwig extends AbstractController
     #[Route('/api/deck/shuffle', name: 'api_shuffle_post', methods:['POST'])]
     public function PostAPIDeckShuffle(
         SessionInterface $session
-    ): response
-    {
+    ): response {
         $session->remove('api_card');
         $session->remove('api_cardhand');
 
@@ -80,8 +78,7 @@ class APIControllerTwig extends AbstractController
     #[Route('/api/deck/draw', name: 'api_deck_draw_post', methods:['POST'])]
     public function PostAPIDeckDraw(
         SessionInterface $session
-    ): response
-    {
+    ): response {
         $card = $session->get("api_card");
         $hand = $session->get("api_cardhand");
 
@@ -103,8 +100,7 @@ class APIControllerTwig extends AbstractController
     #[Route('api/deck/draw/{num<\d+>}', name: 'api_number_cards_post', methods: ['POST'])]
     public function GetAPIManyCards(
         int $num,
-    ): Response
-    {
+    ): Response {
         return $this->RedirectToRoute('api_number_cards_get', ['num' => $num]);
     }
 
@@ -112,8 +108,7 @@ class APIControllerTwig extends AbstractController
     public function PostAPIManyCards(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $num = $request->get('num');
 
         if ($num > 52) {
@@ -131,7 +126,7 @@ class APIControllerTwig extends AbstractController
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
-        $response->getEncodingOptions() | JSON_PRETTY_PRINT
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
     }

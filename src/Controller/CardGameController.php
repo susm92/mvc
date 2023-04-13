@@ -17,8 +17,7 @@ class CardGameController extends AbstractController
     #[Route('card', name: 'card')]
     public function card(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $card = new Card();
         $hand = new CardHand();
 
@@ -46,14 +45,13 @@ class CardGameController extends AbstractController
     #[Route('card/deck/shuffle', name: 'shuffle')]
     public function shuffleDeck(
         SessionInterface $session,
-    ): Response
-    {
-        
+    ): Response {
+
         $session->remove('card');
         $session->remove('CardHand');
-        
+
         $deck = new DeckOfCards();
-        
+
         $data = [
             "deck" => $deck->shuffleDeck(),
         ];
@@ -64,8 +62,7 @@ class CardGameController extends AbstractController
     #[Route('card/deck/draw', name:'draw')]
     public function testDraw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $card = $session->get("card");
         $hand = $session->get("CardHand");
 
@@ -83,10 +80,8 @@ class CardGameController extends AbstractController
     public function testManyCards(
         int $num,
         SessionInterface $session
-    ): Response
-    {
-        if ($num > 52)
-        {
+    ): Response {
+        if ($num > 52) {
             throw new \Exception("Not enough cards!");
         }
 

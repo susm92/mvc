@@ -8,7 +8,13 @@
 <p>Here is the card you drew.</p>
 
 
-<p class="draw">[{{ showValue }}]</p>
+<p class="draw">
+    {% if showValue matches '/♦|♥/' %}
+        <span class="card-red">[{{ showValue }}]</span>
+    {% else %}
+        [{{ showValue }}]
+    {% endif %}
+</p>
 
 
 <p>Cards left - {{ cardAmount }} </p>

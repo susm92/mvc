@@ -11,9 +11,19 @@
     {% for i in 0..51 %}
         {% if i % 13 == 0 %}
             <br><br>
-            <li> [{{ deck[i] }}] </li>
+            <li>{% if deck[i] matches '/♦|♥/' %}
+                    <span class="card-red">[{{ deck[i] }}]</span>
+                {% else %}
+                    [{{ deck[i] }}]
+                {% endif %}
+            </li>
         {% else %}
-            <li> [{{ deck[i] }}] </li>
+            <li>{% if deck[i] matches '/♦|♥/' %}
+                    <span class="card-red">[{{ deck[i] }}]</span>
+                {% else %}
+                    [{{ deck[i] }}]
+                {% endif %}
+            </li>
         {% endif %}
     {% endfor %}
 </ul>

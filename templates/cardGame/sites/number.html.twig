@@ -9,7 +9,12 @@
 
 <ul class="deck">
 {% for cards in hand %}
-    <li> [{{ cards }}] </li>
+    <li>{% if cards matches '/♦|♥/' %}
+            <span class="card-red">[{{ cards }}]</span>
+        {% else %}
+            [{{ cards }}]
+        {% endif %}
+    </li>
 {% endfor %}
 </ul>
 

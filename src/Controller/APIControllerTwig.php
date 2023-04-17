@@ -19,13 +19,6 @@ class APIControllerTwig extends AbstractController
     public function apiHome(
         SessionInterface $session
     ): Response {
-        $card = new Card();
-        $hand = new CardHand();
-
-        if (!$session->get('api_card') || !$session->get('api_cardhand') || empty($session->get('api_card')) || empty($session->get('api_cardhand'))) {
-            $session->set('api_card', $card);
-            $session->set('api_cardhand', $hand);
-        }
 
         return $this->render('cardGame/api/home.html.twig');
     }
@@ -60,14 +53,6 @@ class APIControllerTwig extends AbstractController
             "deck" => $deck->shuffleDeck(),
         ];
 
-        $card = new Card();
-        $hand = new CardHand();
-
-        if (!$session->get('api_card') || !$session->get('api_cardhand') || empty($session->get('api_card')) || empty($session->get('api_cardhand'))) {
-            $session->set('api_card', $card);
-            $session->set('api_cardhand', $hand);
-        }
-
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
@@ -79,6 +64,12 @@ class APIControllerTwig extends AbstractController
     public function PostAPIDeckDraw(
         SessionInterface $session
     ): response {
+
+        if (!$session->get('api_card') || !$session->get('api_cardhand') || empty($session->get('api_card')) || empty($session->get('api_cardhand'))) {
+            $session->set('api_card', new Card());
+            $session->set('api_cardhand', new CardHand());
+        }
+
         $card = $session->get("api_card");
         $hand = $session->get("api_cardhand");
 
@@ -113,6 +104,11 @@ class APIControllerTwig extends AbstractController
 
         if ($num > 52) {
             throw new \Exception("Not enough cards!");
+        }
+
+        if (!$session->get('api_card') || !$session->get('api_cardhand') || empty($session->get('api_card')) || empty($session->get('api_cardhand'))) {
+            $session->set('api_card', new Card());
+            $session->set('api_cardhand', new CardHand());
         }
 
         $hand = $session->get('api_cardhand');

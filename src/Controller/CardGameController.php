@@ -18,13 +18,6 @@ class CardGameController extends AbstractController
     public function card(
         SessionInterface $session
     ): Response {
-        $card = new Card();
-        $hand = new CardHand();
-
-        if (!$session->get('card') || !$session->get('CardHand') || empty($session->get('card')) || empty($session->get('CardHand'))) {
-            $session->set('card', $card);
-            $session->set('CardHand', $hand);
-        }
 
         return $this->render('cardGame/home.html.twig');
     }
@@ -63,6 +56,12 @@ class CardGameController extends AbstractController
     public function testDraw(
         SessionInterface $session
     ): Response {
+
+        if (!$session->get('card') || !$session->get('CardHand') || empty($session->get('card')) || empty($session->get('CardHand'))) {
+            $session->set('card', new Card());
+            $session->set('CardHand', new CardHand());
+        }
+
         $card = $session->get("card");
         $hand = $session->get("CardHand");
 
@@ -83,6 +82,11 @@ class CardGameController extends AbstractController
     ): Response {
         if ($num > 52) {
             throw new \Exception("Not enough cards!");
+        }
+
+        if (!$session->get('card') || !$session->get('CardHand') || empty($session->get('card')) || empty($session->get('CardHand'))) {
+            $session->set('card', new Card());
+            $session->set('CardHand', new CardHand());
         }
 
         $hand = $session->get('CardHand');

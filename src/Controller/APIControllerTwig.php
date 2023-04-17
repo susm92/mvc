@@ -41,12 +41,18 @@ class APIControllerTwig extends AbstractController
     }
 
     #[Route('/api/deck/shuffle', name: 'api_shuffle_post', methods:['POST'])]
-    public function PostAPIDeckShuffle(
+    public function getAPIDeckShuffle(
         SessionInterface $session
     ): response {
         $session->remove('api_card');
         $session->remove('api_cardhand');
 
+        return $this->RedirectToRoute('api_shuffle_get');
+    }
+
+    #[Route('/api/deck/shuffle', name: 'api_shuffle_get', methods:['GET'])]
+    public function PostAPIDeckShuffle(): response
+    {
         $deck = new DeckOfCards();
 
         $data = [
@@ -69,6 +75,14 @@ class APIControllerTwig extends AbstractController
             $session->set('api_card', new Card());
             $session->set('api_cardhand', new CardHand());
         }
+
+        return $this->RedirectToRoute('api_deck_draw_get');
+    }
+
+    #[Route('/api/deck/draw', name: 'api_deck_draw_get', methods:['GET'])]
+    public function getAPIDeckDraw(
+        SessionInterface $session
+    ): response {
 
         $card = $session->get("api_card");
         $hand = $session->get("api_cardhand");

@@ -14,14 +14,14 @@
             <li>{% if deck[i] matches '/♦|♥/' %}
                     <span class="card-red">[{{ deck[i] }}]</span>
                 {% else %}
-                    [{{ deck[i] }}]
+                    <span>[{{ deck[i] }}]</span>
                 {% endif %}
             </li>
         {% else %}
             <li>{% if deck[i] matches '/♦|♥/' %}
                     <span class="card-red">[{{ deck[i] }}]</span>
                 {% else %}
-                    [{{ deck[i] }}]
+                    <span>[{{ deck[i] }}]</span>
                 {% endif %}
             </li>
         {% endif %}

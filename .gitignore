@@ -13,6 +13,7 @@ tools/
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache
+.php-cs-fixer.cache
 ###< phpunit/phpunit ###
 
 ###> symfony/phpunit-bridge ###

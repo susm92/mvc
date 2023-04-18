@@ -14,6 +14,8 @@ tools/
 /phpunit.xml
 .phpunit.result.cache
 .php-cs-fixer.cache
+phpmd.xml
+phpstan.neon
 ###< phpunit/phpunit ###
 
 ###> symfony/phpunit-bridge ###

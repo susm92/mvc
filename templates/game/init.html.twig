@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Start{% endblock %}
+
+{% block body %}
+
+<h1>Press below to start!</h1>
+
+<form method="post" action="">
+    <ul>
+        <p><input type="submit" name="start" value="Start"
+            onClick="this.form.action='{{ path('play_get') }}';"
+        > - Start Game</p>
+    </ul>
+</form>
+
+
+{% endblock %}

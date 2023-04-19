@@ -21,6 +21,7 @@ class Card
     {
         if (sizeof($this->value) != 0) {
             $this->cardValue = $this->value[array_rand($this->value, 1)];
+
             unset($this->value[array_search($this->cardValue, $this->value)]);
         }
     }

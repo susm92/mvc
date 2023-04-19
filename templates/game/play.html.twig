@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Twenty-One Game{% endblock %}
+
+{% block body %}
+
+<h1>Twenty-One [PLAYING]</h1>
+
+{% if cardhand is not empty %}
+
+    <p>Cards in hand</p>
+    {% for cards in cardhand %}
+
+        <img class="cg-img" src="{{ asset('img/cards/' ~ cards ~ '.svg') }}" alt="{{ cards }}">
+
+    {% endfor %}
+
+{% else %}
+
+    <p>Please start by drawing a card from the deck.</p>
+
+{% endif %}
+
+<p>Currentpoints in hand {{ points }}</p>
+
+<p>SKALL TAS BORT -- Cards in deck {{ amount }} </p>
+
+<p>What do you wish to do?</p>
+
+<form method="post" action="">
+    <ul class="game-buttons">
+        <li>
+            <input type="submit" name="draw" value="Draw"
+                onClick="this.form.action='{{ path('game_draw') }}';this.form.method='get';"
+            > 
+        </li>
+        <li>
+            {# <input type="submit" name="deck" value="Deck"
+                onClick="this.form.action='{{ path('api_deck') }}';this.form.method='get';"
+            > #} Hold
+        </li>
+        <li>
+            <input type="submit" name="restart" value="Restart"
+                onClick="this.form.action='{{ path('play_post') }}';"
+            >
+        </li>
+    </ul>
+</form>
+
+
+{% endblock %}

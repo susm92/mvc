@@ -34,6 +34,11 @@
                 onClick="this.form.action='{{ path('api_number_cards_post', {num: 5}) }}';"
             > -- Draws an amount of cards from deck, per default it's set to 5, you can edit the URL to draw even more cards.
         </li>
+        <li>
+            <input type="submit" name="game" value="Game Status"
+                onClick="this.form.action='{{ path('get_api_game') }}';this.form.method='get';"
+            > -- Redirects you to a webiste where the current status of the game is displayed, game must be started for this to work.
+        </li>
     </ul>
 </form>
 

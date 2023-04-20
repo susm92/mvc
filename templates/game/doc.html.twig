@@ -15,8 +15,31 @@
 
 <img class="flode_spel" src="{{ asset('img/flodesDiagram_kmom03.svg') }}" alt="flodesdiagram_kmom03">
 
-<p>3. Behöver fyllas ut</p>
+<p>
+    Två funktioner som står ut i mina tankar är hur jag planerar på att göra för att ta ut poängen från varje kort som dragits samt hur jag programmerar min 'dumma' bank. Om vi tittar på pseudokoden nedan är det något i stil med följande som jag då skall försöka ha för just min poängsättning.
+    <br><br>
+    Mina regler säger att klädda kort skall ha poängen 10 oavsett färg och status, förutom då Ess som då kan ha poängen 11 eller 1 beroende på hur mycket poäng användaren har. Nedan är hur jag tänker mig att poängsättningen tas ut.
+    <br>
+</p>
 
-<p>4. Behöver fyllas ut</p>
+    <img class="pseudo" src="{{ asset('img/pseudo_points.jpg') }}" alt="bild_psuedokod_points">
+
+<p>
+    Sedan har vi även metoden/ routen för hur banken skall agera, i dagsläget är tänker jag mig att så länge bankens poäng är mindre eller lika med 18 så skall denna plocka kort.
+    <br><br>
+    Grovt kan det se ut på liknande sätt.
+</p>
+    <img class="pseudo" src="{{ asset('img/pseudo_points_route.png') }}" alt="bild_psuedokod_points_routes">
+
+<p><strong>Slår ifrån att det kan förändras i framtiden för bägge av pseudokoderna, beroende på efterfrågan och hur jag valt att lösa det.</strong></p>
+
+<p>
+    Jag är i dagsläget lite osäker på om där behövs en extra klass för att lyckas med detta kmom.. Något jag har i tankarna dock är att jag vill göra om mitt spel så att "riktiga" kort används i stället för symboler i form av strängar, där tänker jag mig att jag behöver en klass i stil med CardGraphic eller GraphicDeckOfCards.. 
+    <br><br>
+
+    Men tanken grovt är att jag använder mig av min klass för kortleken, främst så att bägge spelarna drar från samma kortlek, för denna delen går DeckOfCards helt ok att använda sig av. Gällande spelarna så tänker jag mig att jag troligtvis kan få till olika spelare med hjälp av sessioner och då skapande av nya objekt för klassen CardHand, så länge varje spelare har en korthand så kommer jag lätt kunna ta ut samtliga kort för just den spelaren.
+    <br>
+    Slutligen är det poängräkningen som gäller, poäng för spelaren och banken går att lagra i sessioner och blir nog smidigast så, utöver det så kommer jag även behöva en funktion för att räkna poängen för varje kort som dras.. Detta behöver ses över, kan dock nog sparas i DeckOfCards eller liknande. 
+</p>
 
 {% endblock %}

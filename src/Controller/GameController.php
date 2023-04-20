@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Deck\CardHand;
 use App\Deck\GraphicDeckOfCards;
-use App\Deck\Player;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -45,35 +44,41 @@ class GameController extends AbstractController
         $session->set('player_hand', new CardHand());
         $session->set('player_points', 0);
         
-        $session->set('band_hand', new CardHand());
+        $session->set('bank_hand', new CardHand());
         $session->set('bank_points', 0);
 
         return $this->redirectToRoute('play_get');
     }
+
+    ###########################################################
+    ######################### SPELARE #########################
+    ###########################################################
 
     #[Route('game/play', name: 'play_get', methods: ['GET'])]
     public function getGame(
         SessionInterface $session
     ): Response
     {
-        $card = $session->get('deck');
+        $p_deck = $session->get('deck');
         $hand = $session->get('player_hand');
         $points = $session->get('player_points');
 
         if ($session->get('player_drawn') == true)
         {
-            if ($card->points() == 'ace' && $points < 10) {
+            $addPoints = $p_deck->points();
+
+            if ($addPoints == 'ace' && $points < 10) {
                 $points += 11;
-            } elseif ($card->points() == 'ace' && $points > 10) {
+            } elseif ($addPoints == 'ace' && $points >= 10) {
                 $points += 1;
             } else {
-                $points += $card->points();
+                $points += $addPoints;
             }
         }
 
         $data = [
             'cardhand' => $hand->showCards(),
-            'amount' => $card->getAmount(),
+            'amount' => $p_deck->getAmount(),
             'points' => $points,
         ];
 
@@ -98,11 +103,57 @@ class GameController extends AbstractController
         return $this->redirectToRoute('play_get');
     }
 
+    ###########################################################
+    ######################### BANK ############################
+    ###########################################################
+
     #[Route('game/handover', name: 'hold', methods: ['GET'])]
     public function handOver(): Response
     {
-        // hej hej
-        // redirect till sida med mötet mellan banken och mig
+        return $this->redirectToRoute('bank_plays');
     }
-    
+
+    #[Route('game/bank_plays', name: 'bank_plays')]
+    public function bankPlays(
+        SessionInterface $session
+    ): Response
+    {
+        $b_deck = $session->get('deck'); 
+        $b_hand = $session->get('bank_hand');
+        $points = $session->get('bank_points');
+
+        while ($points < 18)
+        {
+            $b_hand->addCards($b_deck, 1);
+            $addPoints = $b_deck->points();
+            
+            if ($addPoints == 'ace' && $points < 10) {
+                $points += 11;
+            } elseif ($addPoints == 'ace' && $points >= 10) {
+                $points += 1;
+            } else {
+                $points += $addPoints;
+            }
+        }
+
+        $session->set('bank_points', $points);
+        $session->set('bank_hand', $b_hand);
+        
+        return $this->redirectToRoute('score');
+    }
+
+    #[Route('game/score', name: 'score')]
+    public function Score(
+        SessionInterface $session
+    ): Response
+    {
+        $data = [
+            'p_hand' => $session->get('player_hand')->showCards(),
+            'p_points' => $session->get('player_points'),
+            'b_hand' => $session->get('bank_hand')->showCards(),
+            'b_points' => $session->get('bank_points'),
+        ];
+
+        return $this->render('game/score.html.twig', $data);
+    }
 }

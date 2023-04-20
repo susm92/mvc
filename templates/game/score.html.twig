@@ -4,56 +4,42 @@
 
 {% block body %}
 
-<h1>Twenty-One [PLAYING]</h1>
+<h1>Twenty-One [FINISHED]</h1>
 
-{% if cardhand is not empty %}
+<p>Banks hand</p>
+<p>Points: {{ b_points }} </p>
 
-    <p>Cards in hand</p>
-    {% for cards in cardhand %}
+<br>
 
-        <img class="cg-img" src="{{ asset('img/cards/' ~ cards ~ '.svg') }}" alt="{{ cards }}">
+{% for cards in b_hand %}
 
-    {% endfor %}
+    <img class="cg-img" src="{{ asset('img/cards/' ~ cards ~ '.svg') }}" alt="{{ cards }}">
 
-{% else %}
+{% endfor %}
 
-    <p>Please start by drawing a card from the deck.</p>
+<br>
+
+{% if b_points <= 21 and b_points >= p_points %}
+
+<h2>=============== Bank Wins! ===============</h2>
+
+{% else  %}
+
+<h2>=============== Player Wins! ===============</h2>
 
 {% endif %}
 
-<p>Currentpoints in hand {{ points }}</p>
+<p>Players hand</p>
+<p>Points: {{ p_points }} </p>
+<br>
+{% for cards in p_hand %}
 
-<p>SKALL TAS BORT -- Cards in deck {{ amount }} </p>
+    <img class="cg-img" src="{{ asset('img/cards/' ~ cards ~ '.svg') }}" alt="{{ cards }}">
 
-
-{% if points <= 21 %}
-
-<p>What do you wish to do?</p>
-
-<form method="post" action="">
-    <ul class="game-buttons">
-        <li>
-            <input type="submit" name="draw" value="Draw"
-                onClick="this.form.action='{{ path('game_draw') }}';"
-            > 
-        </li>
-        <li>
-            <input type="submit" name="hold" value="Hold"
-                onClick="this.form.action='{{ path('hold') }}';this.form.method='get';"
-            >
-        </li>
-        <li>
-            <input type="submit" name="restart" value="Restart"
-                onClick="this.form.action='{{ path('play_post') }}';"
-            >
-        </li>
-    </ul>
-</form>
-
-{% else %}
+{% endfor %}
 
 <p>
-    <strong>You are above 21 and have automatically lost.</strong>
+    <strong>Click on restart to play again, otherwise click on any of the links in the navbar.</strong>
 </p>
 
 <form method="post" action="">
@@ -64,8 +50,6 @@
             >
         </li>
     </ul>
-
-{% endif %}
-
+</form>
 
 {% endblock %}

@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Deck\Card;
 use App\Deck\CardHand;
-use App\Deck\DeckOfCards;
 use App\Deck\GraphicDeckOfCards;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -16,11 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class APIGameController extends AbstractController
 {
-   #[Route('/api/game', name: 'get_api_game', methods: ['GET'])]
-   public function getGame(
-    SessionInterface $session
-   ): response
-   {
+    #[Route('/api/game', name: 'get_api_game', methods: ['GET'])]
+    public function getGame(
+        SessionInterface $session
+    ): response {
         $data = [
             'player hand' => $session->get('player_hand')->showCards(),
             'player points' => $session->get('player_points'),
@@ -34,5 +31,5 @@ class APIGameController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
-   }
+    }
 }

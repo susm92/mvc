@@ -16,10 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class APIControllerTwig extends AbstractController
 {
     #[Route('/api', name: 'api_home', methods: ['GET'])]
-    public function apiHome(
-        SessionInterface $session
-    ): Response {
-
+    public function apiHome(): Response
+    {
         return $this->render('cardGame/api/home.html.twig');
     }
 
@@ -51,7 +49,7 @@ class APIControllerTwig extends AbstractController
     }
 
     #[Route('/api/deck/shuffle', name: 'api_shuffle_get', methods:['GET'])]
-    public function PostAPIDeckShuffle(): response
+    public function postAPIDeckShuffle(): response
     {
         $deck = new DeckOfCards();
 
@@ -67,11 +65,11 @@ class APIControllerTwig extends AbstractController
     }
 
     #[Route('/api/deck/draw', name: 'api_deck_draw_post', methods:['POST'])]
-    public function PostAPIDeckDraw(
+    public function postAPIDeckDraw(
         SessionInterface $session
     ): response {
 
-        if (!$session->get('api_card') || !$session->get('api_cardhand') || empty($session->get('api_card')) || empty($session->get('api_cardhand'))) {
+        if (!$session->get('api_card') || !$session->get('api_cardhand') || $session->get('api_card') == null || $session->get('api_cardhand') == null) {
             $session->set('api_card', new Card());
             $session->set('api_cardhand', new CardHand());
         }
@@ -103,14 +101,14 @@ class APIControllerTwig extends AbstractController
     }
 
     #[Route('api/deck/draw/{num<\d+>}', name: 'api_number_cards_post', methods: ['POST'])]
-    public function GetAPIManyCards(
+    public function getAPIManyCards(
         int $num,
     ): Response {
         return $this->RedirectToRoute('api_number_cards_get', ['num' => $num]);
     }
 
     #[Route('api/deck/draw/{num<\d+>}', name: 'api_number_cards_get', methods: ['GET'])]
-    public function PostAPIManyCards(
+    public function postAPIManyCards(
         Request $request,
         SessionInterface $session
     ): Response {
@@ -120,7 +118,7 @@ class APIControllerTwig extends AbstractController
             throw new \Exception("Not enough cards!");
         }
 
-        if (!$session->get('api_card') || !$session->get('api_cardhand') || empty($session->get('api_card')) || empty($session->get('api_cardhand'))) {
+        if (!$session->get('api_card') || !$session->get('api_cardhand') || $session->get('api_card') == null || $session->get('api_cardhand') == null) {
             $session->set('api_card', new Card());
             $session->set('api_cardhand', new CardHand());
         }

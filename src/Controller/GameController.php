@@ -26,7 +26,7 @@ class GameController extends AbstractController
     }
 
     ### Själva spelet! ###
-    
+
     #[Route('game/init', name: 'init')]
     public function start(): Response
     {
@@ -36,14 +36,13 @@ class GameController extends AbstractController
     #[Route('game/play', name: 'play_post', methods: ['POST'])]
     public function postGame(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->set('deck', new GraphicDeckOfCards());
 
 
         $session->set('player_hand', new CardHand());
         $session->set('player_points', 0);
-        
+
         $session->set('bank_hand', new CardHand());
         $session->set('bank_points', 0);
 
@@ -57,15 +56,13 @@ class GameController extends AbstractController
     #[Route('game/play', name: 'play_get', methods: ['GET'])]
     public function getGame(
         SessionInterface $session
-    ): Response
-    {
-        $p_deck = $session->get('deck');
+    ): Response {
+        $deck = $session->get('deck');
         $hand = $session->get('player_hand');
         $points = $session->get('player_points');
 
-        if ($session->get('player_drawn') == true)
-        {
-            $addPoints = $p_deck->points();
+        if ($session->get('player_drawn') == true) {
+            $addPoints = $deck->points();
 
             if ($addPoints == 'ace' && $points < 10) {
                 $points += 11;
@@ -78,7 +75,7 @@ class GameController extends AbstractController
 
         $data = [
             'cardhand' => $hand->showCards(),
-            'amount' => $p_deck->getAmount(),
+            'amount' => $deck->getAmount(),
             'points' => $points,
         ];
 
@@ -91,8 +88,7 @@ class GameController extends AbstractController
     #[Route('game/draw', name: 'game_draw', methods: ['POST'])]
     public function drawCard(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $hand = $session->get('player_hand');
         $hand->addCards($session->get('deck'), 1);
 
@@ -116,17 +112,15 @@ class GameController extends AbstractController
     #[Route('game/bank_plays', name: 'bank_plays')]
     public function bankPlays(
         SessionInterface $session
-    ): Response
-    {
-        $b_deck = $session->get('deck'); 
-        $b_hand = $session->get('bank_hand');
+    ): Response {
+        $deck = $session->get('deck');
+        $bHand = $session->get('bank_hand');
         $points = $session->get('bank_points');
 
-        while ($points < 18)
-        {
-            $b_hand->addCards($b_deck, 1);
-            $addPoints = $b_deck->points();
-            
+        while ($points < 18) {
+            $bHand->addCards($deck, 1);
+            $addPoints = $deck->points();
+
             if ($addPoints == 'ace' && $points < 10) {
                 $points += 11;
             } elseif ($addPoints == 'ace' && $points >= 10) {
@@ -137,16 +131,15 @@ class GameController extends AbstractController
         }
 
         $session->set('bank_points', $points);
-        $session->set('bank_hand', $b_hand);
-        
+        $session->set('bank_hand', $bHand);
+
         return $this->redirectToRoute('score');
     }
 
     #[Route('game/score', name: 'score')]
-    public function Score(
+    public function getScore(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $data = [
             'p_hand' => $session->get('player_hand')->showCards(),
             'p_points' => $session->get('player_points'),

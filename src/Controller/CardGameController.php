@@ -16,9 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class CardGameController extends AbstractController
 {
     #[Route('card', name: 'card')]
-    public function card(
-        SessionInterface $session
-    ): Response {
+    public function card(): Response
+    {
 
         return $this->render('cardGame/home.html.twig');
     }
@@ -58,7 +57,7 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response {
 
-        if (!$session->get('card') || !$session->get('CardHand') || empty($session->get('card')) || empty($session->get('CardHand'))) {
+        if (!$session->get('card') || !$session->get('CardHand') || $session->get('card') == null || $session->get('CardHand') == null) {
             $session->set('card', new Card());
             $session->set('CardHand', new CardHand());
         }
@@ -85,7 +84,7 @@ class CardGameController extends AbstractController
             throw new \Exception("Not enough cards!");
         }
 
-        if (!$session->get('card') || !$session->get('CardHand') || empty($session->get('card')) || empty($session->get('CardHand'))) {
+        if (!$session->get('card') || !$session->get('CardHand') || $session->get('card') == null || $session->get('CardHand') == null) {
             $session->set('card', new Card());
             $session->set('CardHand', new CardHand());
         }

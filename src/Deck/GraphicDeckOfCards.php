@@ -32,16 +32,14 @@ class GraphicDeckOfCards extends Card
     {
         if ($this->cardValue == null) {
             return 0;
-        }
-        else {
+        } else {
             $points = substr($this->cardValue, 2);
-            
+
             if ($points == 'jack' || $points == 'queen' || $points == 'king') {
                 return 10;
             } elseif ($points == 'ace') {
                 return $points;
-            } 
-            else {
+            } else {
                 return intval($points);
             }
         }

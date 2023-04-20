@@ -21,12 +21,12 @@ class QuoteControllerTwig
         ];
 
         $rand = array_rand($quotes, 1);
-        $t = time();
+        $time = time();
 
         $data = [
             'qoute-of-the-day' => $quotes[$rand],
-            'generated' => date('H:i:s', $t),
-            'date' => date('Y-m-d', $t)
+            'generated' => date('H:i:s', $time),
+            'date' => date('Y-m-d', $time)
         ];
 
         // return new JsonResponse($data);

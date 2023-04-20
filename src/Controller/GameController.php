@@ -2,10 +2,9 @@
 
 namespace App\Controller;
 
-use App\Deck\Card;
-use App\Deck\CardGraphic;
 use App\Deck\CardHand;
 use App\Deck\GraphicDeckOfCards;
+use App\Deck\Player;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -40,9 +39,14 @@ class GameController extends AbstractController
         SessionInterface $session
     ): Response
     {
-        $session->set('card', new GraphicDeckOfCards());
-        $session->set('cardhand', new CardHand());
+        $session->set('deck', new GraphicDeckOfCards());
+
+
+        $session->set('player_hand', new CardHand());
         $session->set('player_points', 0);
+        
+        $session->set('band_hand', new CardHand());
+        $session->set('bank_points', 0);
 
         return $this->redirectToRoute('play_get');
     }
@@ -52,16 +56,19 @@ class GameController extends AbstractController
         SessionInterface $session
     ): Response
     {
-        $hand = $session->get("cardhand");
-        $card = $session->get('card');
+        $card = $session->get('deck');
+        $hand = $session->get('player_hand');
         $points = $session->get('player_points');
 
-        if ($card->points() == 'ace' && $points < 10) {
-            $points += 10;
-        } elseif ($card->points() == 'ace' && $points > 10) {
-            $points += 1;
-        } else {
-            $points += $card->points();
+        if ($session->get('player_drawn') == true)
+        {
+            if ($card->points() == 'ace' && $points < 10) {
+                $points += 11;
+            } elseif ($card->points() == 'ace' && $points > 10) {
+                $points += 1;
+            } else {
+                $points += $card->points();
+            }
         }
 
         $data = [
@@ -70,21 +77,32 @@ class GameController extends AbstractController
             'points' => $points,
         ];
 
-        $points = $session->set('player_points', $points);
+        $session->set('player_points', $points);
+        $session->set('player_drawn', false);
 
         return $this->render('game/play.html.twig', $data);
     }
 
-    #[Route('game/draw', name: 'game_draw')]
+    #[Route('game/draw', name: 'game_draw', methods: ['POST'])]
     public function drawCard(
         SessionInterface $session
     ): Response
     {
-        $hand = $session->get("cardhand");
-        $hand->addCards($session->get('card'), 1);
+        $hand = $session->get('player_hand');
+        $hand->addCards($session->get('deck'), 1);
 
-        $session->set('cardhand', $hand);
+        $session->set('player_hand', $hand);
+
+        $session->set('player_drawn', true);
 
         return $this->redirectToRoute('play_get');
     }
+
+    #[Route('game/handover', name: 'hold', methods: ['GET'])]
+    public function handOver(): Response
+    {
+        // hej hej
+        // redirect till sida med mötet mellan banken och mig
+    }
+    
 }

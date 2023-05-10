@@ -8,6 +8,7 @@
 /var/
 /vendor/
 tools/
+.phpdoc/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

@@ -2,6 +2,11 @@
 
 namespace App\Deck;
 
+/**
+ * Class used for svg images of pictures instead of strings.
+ * 
+ * {@inheritDoc}
+ */
 class GraphicDeckOfCards extends Card
 {
     protected $cardValue;
@@ -17,17 +22,26 @@ class GraphicDeckOfCards extends Card
         parent::__construct();
     }
 
+    /**
+     * Shows the current deck of cards.
+     */
     public function showDeck(): array
     {
         return $this->value;
     }
 
+    /**
+     * Shuffles the above array @var value[] and returns it.
+     */
     public function shuffleDeck(): array
     {
         shuffle($this->value);
         return $this->value;
     }
 
+    /**
+     * Calculates the points for the current card in @var cardValue, depending on the card drawn.
+     */
     public function points()
     {
         if ($this->cardValue == null) {

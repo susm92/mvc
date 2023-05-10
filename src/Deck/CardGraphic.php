@@ -2,6 +2,11 @@
 
 namespace App\Deck;
 
+/**
+ * Card used for svg-images instead of string, works just as before as cards.
+ * 
+ * {@inheritDoc}
+ */
 class CardGraphic extends Card
 {
     protected $value = [

@@ -42,7 +42,6 @@ class CardHandTest extends TestCase
     public function testAddCard()
     {
         $cardhand = new CardHand();
-        $card = new Card();
 
         $cardhand->addCard('2♥');
         $this->assertEquals(['2♥'], $cardhand->showCards());

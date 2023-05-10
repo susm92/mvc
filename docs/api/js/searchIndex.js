@@ -191,6 +191,11 @@ Search.appendIndex(
             "summary": "Randomly\u0020assignes\u0020a\u0020value\u0020from\u0020\u0040var\u0020value\u005B\u005D\u0020to\u0020\u0040var\u0020cardValue\nThe\u0020assigned\u0020value\u0020is\u0020later\u0020removed\u0020from\u0020\u0040var\u0020value\u005B\u005D.",
             "url": "classes/App-Deck-Card.html#method_draw"
         },                {
+            "fqsen": "\\App\\Deck\\Card\u003A\u003AgetCardValue\u0028\u0029",
+            "name": "getCardValue",
+            "summary": "Real\u0020getter\u0020function\u0020for\u0020the\u0020\u0040var\u0020cardvalue\nOnly\u0020used\u0020for\u0020testing\u0020purpose.",
+            "url": "classes/App-Deck-Card.html#method_getCardValue"
+        },                {
             "fqsen": "\\App\\Deck\\Card\u003A\u003AshowValue\u0028\u0029",
             "name": "showValue",
             "summary": "Returns\u0020the\u0020current\u0020value\u0020of\u0020\u0040var\u0020cardValue\nCan\u0020be\u0020seen\u0020as\u0020a\u0020\u0027getter\u0027\u0020function",
@@ -200,6 +205,11 @@ Search.appendIndex(
             "name": "getAmount",
             "summary": "Returns\u0020the\u0020current\u0020size\u0020of\u0020\u0040var\u0020value\u005B\u005D",
             "url": "classes/App-Deck-Card.html#method_getAmount"
+        },                {
+            "fqsen": "\\App\\Deck\\Card\u003A\u003AshowDeck\u0028\u0029",
+            "name": "showDeck",
+            "summary": "Is\u0020used\u0020to\u0020show\u0020the\u0020current\u0020deck\u0020of\u0020cards.",
+            "url": "classes/App-Deck-Card.html#method_showDeck"
         },                {
             "fqsen": "\\App\\Deck\\Card\u003A\u003A\u0024cardValue",
             "name": "cardValue",
@@ -305,6 +315,11 @@ Search.appendIndex(
             "name": "showDeck",
             "summary": "Shows\u0020the\u0020current\u0020deck\u0020of\u0020cards.",
             "url": "classes/App-Deck-GraphicDeckOfCards.html#method_showDeck"
+        },                {
+            "fqsen": "\\App\\Deck\\GraphicDeckOfCards\u003A\u003AaddCard\u0028\u0029",
+            "name": "addCard",
+            "summary": "adds\u0020a\u0020card\u0020to\u0020graphicdeckofcards\nused\u0020for\u0020testing",
+            "url": "classes/App-Deck-GraphicDeckOfCards.html#method_addCard"
         },                {
             "fqsen": "\\App\\Deck\\GraphicDeckOfCards\u003A\u003AshuffleDeck\u0028\u0029",
             "name": "shuffleDeck",

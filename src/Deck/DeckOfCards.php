@@ -4,8 +4,8 @@ namespace App\Deck;
 
 /**
  * Holds the cards drawn.
- * 
- * {@inheritDoc} In addition, does also have methods to shuffle and show the current deck we are working with. 
+ *
+ * {@inheritDoc} In addition, does also have methods to shuffle and show the current deck we are working with.
  */
 class DeckOfCards extends Card
 {

@@ -4,9 +4,9 @@ namespace App\Deck;
 
 /**
  * Card class for my Deck game.
- * 
+ *
  * Is used to hold an array of different cards, after each draw the array shrinks.
- * 
+ *
  * @author susm20
  */
 class Card
@@ -47,7 +47,7 @@ class Card
     /**
      * Real getter function for the @var cardvalue
      * Only used for testing purpose..
-     * 
+     *
      * @return null
      */
     public function getCardValue()

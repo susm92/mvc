@@ -4,7 +4,7 @@ namespace App\Deck;
 
 /**
  * Class used for svg images of pictures instead of strings.
- * 
+ *
  * {@inheritDoc}
  */
 class GraphicDeckOfCards extends Card

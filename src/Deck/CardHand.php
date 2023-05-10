@@ -3,11 +3,12 @@
 namespace App\Deck;
 
 use App\Deck\Card;
+
 /**
  * CardHand class for my deck game.
- * 
+ *
  * Is used to hold all the cards that have been drawed from the card object that is being sent in to the class.
- * 
+ *
  */
 class CardHand
 {
@@ -23,7 +24,7 @@ class CardHand
 
     /**
      * Stores card object to @var card, then draws the number a number of cards.
-     * 
+     *
      * @param object    $card   stores an card object to the variable
      * @param int       $num    the amounts of times to draw a new card
      */
@@ -38,7 +39,7 @@ class CardHand
 
     /**
      * Adds a card to the @var hand[]
-     * 
+     *
      * @param string    $card   adds a new string value to the @var hand[]
      */
     public function addCard(string $card): void

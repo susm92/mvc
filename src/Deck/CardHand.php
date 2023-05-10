@@ -7,12 +7,7 @@ use App\Deck\Card;
  * CardHand class for my deck game.
  * 
  * Is used to hold all the cards that have been drawed from the card object that is being sent in to the class.
- * The methods for used in this class are:
- *  * addCards
- *  * addCard
- *  * showCards
- *  * draw
- *  * showCount
+ * 
  */
 class CardHand
 {

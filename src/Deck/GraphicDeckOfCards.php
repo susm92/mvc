@@ -31,6 +31,16 @@ class GraphicDeckOfCards extends Card
     }
 
     /**
+     * adds a card to graphicdeckofcards
+     * used for testing
+     */
+    public function addCard(string $card): void
+    {
+        $this->cardValue = $card;
+        unset($this->value[array_search($this->cardValue, $this->value)]);
+    }
+
+    /**
      * Shuffles the above array @var value[] and returns it.
      */
     public function shuffleDeck(): array

@@ -6,10 +6,6 @@ namespace App\Deck;
  * Card class for my Deck game.
  * 
  * Is used to hold an array of different cards, after each draw the array shrinks.
- * The methods used for the cardclass are:
- *  * draw
- *  * showValue
- *  * getAmount
  * 
  * @author susm20
  */
@@ -49,6 +45,17 @@ class Card
     }
 
     /**
+     * Real getter function for the @var cardvalue
+     * Only used for testing purpose..
+     * 
+     * @return null
+     */
+    public function getCardValue()
+    {
+        return $this->cardValue;
+    }
+
+    /**
      * Returns the current value of @var cardValue
      * Can be seen as a 'getter' function
      */
@@ -63,5 +70,13 @@ class Card
     public function getAmount(): int
     {
         return count($this->value);
+    }
+
+    /**
+     * Is used to show the current deck of cards.
+     */
+    public function showDeck(): array
+    {
+        return $this->value;
     }
 }

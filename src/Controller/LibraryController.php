@@ -31,13 +31,12 @@ class LibraryController extends AbstractController
     public function postBookCreate(
         ManagerRegistry $doctrine,
         Request $request
-        ): Response
-    {
+    ): Response {
         $title = $request->request->get('title');
         $isbn = $request->request->get('isbn');
         $author = $request->request->get('author');
         $imgUrl = $request->request->get('img_url');
-    
+
         $entityManager = $doctrine->getManager();
 
         $book = new Library();
@@ -56,7 +55,7 @@ class LibraryController extends AbstractController
     public function showLibrary(
         LibraryRepository $libraryRepository
     ): Response {
-        
+
         $data = [
             'library' => $libraryRepository->findAll(),
         ];
@@ -102,7 +101,7 @@ class LibraryController extends AbstractController
         $book->setAuthor($author);
         $book->setImage($imgUrl);
         $libraryRepository->save($book, true);
-    
+
         return $this->redirectToRoute('library_show');
     }
 
@@ -134,7 +133,7 @@ class LibraryController extends AbstractController
         }
 
         $libraryRepository->remove($book, true);
-    
+
         return $this->redirectToRoute('library_show');
     }
 }

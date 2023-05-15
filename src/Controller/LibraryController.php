@@ -105,4 +105,36 @@ class LibraryController extends AbstractController
     
         return $this->redirectToRoute('library_show');
     }
+
+    #[Route('/library/delete/{id}', name: 'delete_by_id', methods: ["GET"])]
+    public function deleteBookById(
+        LibraryRepository $libraryRepository,
+        int $id
+    ): Response {
+
+        $data = [
+            'book' =>  $libraryRepository->find($id),
+        ];
+
+        return $this->render('library/sites/deleteBook.html.twig', $data);
+    }
+
+    #[Route('/library/delete/{id}', name: 'post_delete_book', methods:["POST"])]
+    public function postDeleteBookById(
+        LibraryRepository $libraryRepository,
+        int $id,
+    ): Response {
+
+        $book = $libraryRepository->find($id);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for title '.$book
+            );
+        }
+
+        $libraryRepository->remove($book, true);
+    
+        return $this->redirectToRoute('library_show');
+    }
 }

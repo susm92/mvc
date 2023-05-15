@@ -63,4 +63,46 @@ class LibraryController extends AbstractController
 
         return $this->render('library/sites/showBooks.html.twig', $data);
     }
+
+    #[Route('/library/edit/{id}', name: 'name_by_id', methods: ["GET"])]
+    public function editBookById(
+        LibraryRepository $libraryRepository,
+        int $id
+    ): Response {
+
+        $data = [
+            'book' =>  $libraryRepository->find($id),
+        ];
+
+        return $this->render('library/sites/editBook.html.twig', $data);
+    }
+
+    #[Route('/library/edit/{id}', name: 'post_book_update', methods:["POST"])]
+    public function updateBookById(
+        LibraryRepository $libraryRepository,
+        int $id,
+        Request $request
+    ): Response {
+
+        $title = $request->request->get('title');
+        $isbn = $request->request->get('isbn');
+        $author = $request->request->get('author');
+        $imgUrl = $request->request->get('img_url');
+
+        $book = $libraryRepository->find($id);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for title '.$title
+            );
+        }
+
+        $book->setTitle($title);
+        $book->setIsbn(intVal($isbn));
+        $book->setAuthor($author);
+        $book->setImage($imgUrl);
+        $libraryRepository->save($book, true);
+    
+        return $this->redirectToRoute('library_show');
+    }
 }

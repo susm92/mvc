@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete book{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Book to be deleted!</h1>
+
+    <p>Are you sure you want to delete the following book?</p>
+
+    <table class="books">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>ISBN</th>
+        <th>Author</th>
+        <th>Image URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in library %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.isbn }}</td>
+          <td>{{ book.author }}</td>
+          <td><img src="{{ book.image }}"></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    <form method="post" action="{{ path('post_delete_book', {'id': book.id}) }}">
+        <input type="submit" name="submit" value="Delete book!">
+        <input type="button" name="cancel" value="Cancel" onclick="location.href='{{ path('library_show') }}';">
+    </form>
+
+</div>
+
+{% endblock %}

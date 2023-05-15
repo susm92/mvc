@@ -7,20 +7,21 @@
 <div class="book_form">
     <h1>Edit book in Library</h1>
 
-    <form method="post" action="{{ path('post_book_update') }}">
+    <form method="post" action="{{ path('post_book_update', {'id': book.id}) }}">
         Title:<br>
-        <input type="text" name="title">
+        <input type="text" name="title" value="{{ book.title }}">
         <br><br>
         ISBN:<br>
-        <input type="number" name="isbn">
+        <input type="number" name="isbn" value="{{ book.isbn }}">
         <br><br>
         Author:<br>
-        <input type="text" name="author">
+        <input type="text" name="author" value="{{ book.author }}">
         <br><br>
         image-url:<br>
-        <input type="text" name="img_url">
+        <input type="text" name="img_url" value="{{ book.image }}">
         <br><br>
         <input type="submit" name="submit" value="Edit book!">
+        <input type="button" name="cancel" value="Cancel" onclick="location.href='{{ path('library_show') }}';">
     </form>
 </div>
 

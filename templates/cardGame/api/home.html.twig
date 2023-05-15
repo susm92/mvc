@@ -39,6 +39,16 @@
                 onClick="this.form.action='{{ path('get_api_game') }}';this.form.method='get';"
             > -- Redirects you to a webiste where the current status of the game is displayed, game must be started for this to work.
         </li>
+        <li>
+            <input type="submit" name="library" value="Show Library"
+                onClick="this.form.action='{{ path('get_api_library') }}';this.form.method='get';"
+            > -- Shows all the current books in the library, all is displayed in JSON-data.
+        </li>
+        <li>
+            <input type="submit" name="isbn" value="ISBN Search"
+                onClick="this.form.action='{{ path('get_api_isbn_book', {isbn: 9789173539678}) }}';this.form.method='get';"
+            > -- Redirects the user to a specific ISBN search of a book, the URL can be changed to another specifc ISBN number... See this as an example.
+        </li>
     </ul>
 </form>
 

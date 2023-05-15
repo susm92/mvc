@@ -9,6 +9,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class LibraryController extends AbstractController
 {
@@ -28,26 +29,34 @@ class LibraryController extends AbstractController
 
     #[Route('/library/create', name: 'post_book_create', methods: ['POST'])]
     public function postBookCreate(
-        ManagerRegistry $doctrine
-    ): Response {
+        ManagerRegistry $doctrine,
+        Request $request
+        ): Response
+    {
+        $title = $request->request->get('title');
+        $isbn = $request->request->get('isbn');
+        $author = $request->request->get('author');
+        $imgUrl = $request->request->get('img_url');
+    
         $entityManager = $doctrine->getManager();
 
         $book = new Library();
-        $book->setTitle();
-        $book->setIsbn();
-        $book->setAuthor();
-        $book->setImage();
+        $book->setTitle($title);
+        $book->setIsbn(intVal($isbn));
+        $book->setAuthor($author);
+        $book->setImage($imgUrl);
 
         $entityManager->persist($book);
         $entityManager->flush();
 
-        return new Response('Saved new book to library');
+        return $this->redirectToRoute('library_show');
     }
 
     #[Route('/library/show', name: 'library_show')]
     public function showLibrary(
         LibraryRepository $libraryRepository
     ): Response {
+        
         $data = [
             'library' => $libraryRepository->findAll(),
         ];

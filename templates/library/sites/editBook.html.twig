@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Add Book{% endblock %}
+{% block title %}Edit Book{% endblock %}
 
 {% block body %}
 
 <div class="book_form">
-    <h1>Add book to Library</h1>
+    <h1>Edit book in Library</h1>
 
-    <form method="post" action="{{ path('post_book_create') }}">
+    <form method="post" action="{{ path('post_book_update') }}">
         Title:<br>
         <input type="text" name="title">
         <br><br>
@@ -20,7 +20,7 @@
         image-url:<br>
         <input type="text" name="img_url">
         <br><br>
-        <input type="submit" name="submit" value="Add book!">
+        <input type="submit" name="submit" value="Edit book!">
     </form>
 </div>
 

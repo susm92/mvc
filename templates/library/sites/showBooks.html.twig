@@ -7,20 +7,39 @@
 <div>
     <h1>Books in Library</h1>
 
-    {% for books in library %}
-        {{ books }}
-    {% endfor %}
+    <table class="books">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>ISBN</th>
+        <th>Author</th>
+        <th>Image URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in library %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.isbn }}</td>
+          <td>{{ book.author }}</td>
+          <td><img src="{{ book.image }}"></td>
+          <td><a href="/library/edit/{{ book.id }}"><i class="fas fa-edit"></i></a></td>
+          <td><a href="library/delete/{{ book.id }}"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
-
-    <form method="post" action="">
+    <form method="get" action="">
         <ul class="game-buttons">
             <li>
-                <input type="submit" name="add" value="Add Book to Library"
-                    onClick="this.form.action='{{ path('game_draw') }}';"
-                > 
+                <input type="submit" name="add" value="Add book to library"
+                onClick="this.form.action='{{ path('get_book_create') }}';this.form.method='get';"
+            >
             </li>
         </ul>
     </form>
+
 </div>
 
 {% endblock %}

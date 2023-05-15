@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Add book to Library</h1>
+
+    <form method="post" action="">
+        <ul class="game-buttons">
+            <li>
+                <input type="submit" name="add" value="Add Book to Library"
+                    onClick="this.form.action='{{ path('game_draw') }}';"
+                > 
+            </li>
+        </ul>
+    </form>
+
+</div>
+
+{% endblock %}

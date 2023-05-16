@@ -9,6 +9,7 @@
 /vendor/
 tools/
 .phpdoc/
+.php-cs-fixer.cache
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

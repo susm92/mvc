@@ -23,8 +23,8 @@
           <td>{{ book.isbn }}</td>
           <td>{{ book.author }}</td>
           <td><img src="{{ book.image }}"></td>
-          <td><a href="/library/edit/{{ book.id }}"><i class="fas fa-edit"></i></a></td>
-          <td><a href="/library/delete/{{ book.id }}"><i class="fas fa-trash-alt"></i></a></td>
+          <td><a href="{{ path('name_by_id', {'id': book.id}) }}"><i class="fas fa-edit"></i></a></td>
+          <td><a href="{{ path('delete_by_id', {'id': book.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
       {% endfor %}
     </tbody>

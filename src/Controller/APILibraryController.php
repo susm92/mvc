@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Library;
 use App\Repository\LibraryRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,11 +27,22 @@ class APILibraryController extends AbstractController
 
     #[Route('/api/library/book/{isbn}', name: 'get_api_isbn_book', methods: ['GET'])]
     public function getAPIBookISBN(
-        LibraryRepository $libraryRepository,
-        int $isbn
-    ): response {
-        $books = $libraryRepository->findBy(['isbn' => $isbn]);
+        EntityManagerInterface $entityManager,
+        Request $request
+    ): Response {
+        $isbn = $request->get('isbn');
+        $isbn = intval($isbn);
 
-        return $this->json($books);
+        $queryBuilder = $entityManager->createQueryBuilder();
+        $queryBuilder
+            ->select('l')
+            ->from('App\Entity\Library', 'l')
+            ->where('l.isbn = :isbn')
+            ->setParameter('isbn', $isbn);
+
+        $query = $queryBuilder->getQuery();
+        $book = $query->getResult();
+
+        return $this->json($book);
     }
 }

@@ -45,8 +45,8 @@
             > -- Shows all the current books in the library, all is displayed in JSON-data.
         </li>
         <li>
-            <input type="submit" name="isbn" value="ISBN Search"
-                onClick="this.form.action='{{ path('get_api_isbn_book', {isbn: 9789173539678}) }}';this.form.method='get';"
+            <input type="submit" value="ISBN Search"
+                onClick="event.preventDefault(); window.location.href='{{ path('get_api_isbn_book', {isbn: 9789173539678}) }}';"
             > -- Redirects the user to a specific ISBN search of a book, the URL can be changed to another specifc ISBN number... See this as an example.
         </li>
     </ul>

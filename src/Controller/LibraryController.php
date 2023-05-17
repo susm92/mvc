@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Library;
 use App\Repository\LibraryRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,11 +54,19 @@ class LibraryController extends AbstractController
 
     #[Route('/library/show', name: 'library_show')]
     public function showLibrary(
-        LibraryRepository $libraryRepository
+        LibraryRepository $libraryRepository,
+        EntityManagerInterface $entityManager
     ): Response {
 
+        $queryBuilder = $entityManager->createQueryBuilder();
+        $queryBuilder
+            ->select('l.id', 'l.title', 'l.isbn', 'l.author', 'l.image')
+            ->from('App\Entity\Library', 'l');
+        $query = $queryBuilder->getQuery();
+        $library = $query->getResult();
+
         $data = [
-            'library' => $libraryRepository->findAll(),
+            'library' => $library,
         ];
 
         return $this->render('library/sites/showBooks.html.twig', $data);

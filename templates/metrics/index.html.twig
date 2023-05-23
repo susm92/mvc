@@ -7,39 +7,104 @@
     <h1>Introduktion</h1>
     <p>
         I följande moment skall vi gå igenom de sex C:na, som då står för <strong>Codestyle</strong>, <strong>Coverage</strong>, <strong>Complexity</strong>, <strong>Cohesion</strong>, <strong>Coupling</strong> och <strong>CRAP</strong>.
-
-        <br><br>
-
-        Dessa är mätvärden som kan användas till våran kod för att få ut statistik gällande hur väl skriven våran kod är, samt om där finns några förbättringspunkter att göra i koden, "clean code".
-
-        <br><br>
-
-        För att få en bättre förståelse för vad de sex C:na handlar om går vi snabbt igenom koncepten för varje 'C' här nedan:
-        
-        <br><br>
-
-        <strong>Codestyle</strong>
-
-        <br><br>
-
-        <strong>Coverage</strong>
-
-        <br><br>
-
-        <strong>Complexity</strong>
-
-        <br><br>
-
-        <strong>Cohesion</strong>
-        
-        <br><br>
-
-        <strong>Coupling</strong>
-        
-        <br><br>
-
-        <strong>CRAP</strong>
-
     </p>
+
+    <p>
+        Dessa är mätvärden som kan användas till våran kod för att få ut statistik gällande hur väl skriven våran kod är, samt om där finns några förbättringspunkter att göra i koden, "clean code".
+    </p>
+
+    <p>
+        För att få en bättre förståelse för vad de sex C:na handlar om går vi snabbt igenom koncepten för varje 'C' här nedan:
+    </p>
+
+    <p>
+        <strong>Codestyle</strong> - Relaterar till kodstilen som används, hur många rader kod vi har, har vi flera rader kod som är kopierad, vilken typ av approach har används för att skriva koden. Ifall vi används oss av linters eller mess detectors när vi skrivit våran kod, överkoplicerad kod, kod som är simpelt skriven eller svår att underhålla.
+    </p>
+
+    <p>
+        <strong>Coverage</strong> - Kodtäckning används för att visa hur väl våra tester i koden 'täcker' alla aspekter i våran kod. Ju större täckning vi har i vårt program desto mer aspekter av programmet testas mot våra testfall, detta gör det så att det blir lättare att hitta buggar och annat skriven kod som upplevs på ett negativt sätt.
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/code_coverage.PNG') }}" alt="code_coverage">
+            <p>Exempel på kodtäckning av mitt system.</p>
+        </div>
+
+    <p>
+        <strong>Complexity</strong> - I vårt fall utgår vi från en cyklomatisk komplexitet i ett program, detta är en indikator på hur koplext ett program är. En funktion med flera if/ else -statements har +1 i koplexitet för varje jämförelse i programmet, i takt med att fler val läggs till ökar komplexiteten med +1. Vi försöker sträva efter att försöka hålla oss under 10 i cyklomatisk komplexitet.
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/code_complexity.PNG') }}" alt="code_complexity">
+            <p>Exempel på kod komplexiteten, denna typ av kod har en komplexitet på 1 + 3 i värsta fallet.</p>
+        </div>
+
+    <p>
+        <strong>Cohesion</strong> - Det vi försöker sträva efter när vi skriver 'bra' kod är att försöka ha en så hög cohesion som möjligt, detta för att slippa gudklasser som gör allt. En cohesive klass är något som enbart har ett ansvarsområde, med high cohesion menas då att klassen enbart uträttar en sak (något vi vill ha), medan low cohesion är en gudklass som försöker uträtta flera saker åt gången.
+    </p>
+
+    <p>
+        <strong>Coupling</strong> - Menas med hur sammankopplat ett system är, det vi försöker sträva efter är low coupling. I takt med att ett system blir större och större och då kräver mer och mer klasser vill vi försöka hålla ifrån de olika delarna av programmet från varandra så att det blir mindre risk för att systemet kraschar pågrund av att de olika delarna av ett system påverkar variabler för andra klasser och funktioner. Ju lägre sammanhörighet vi har desto stabilare blir våra system.
+    </p>
+
+    <p>
+        <strong>CRAP</strong> - Vilket står för 'Change Risk Analyser and Predictor (Change Risk Anti Pattern)'. Detta används för att estimera hur mycket jobb du behöver för att åtgärda 'dåliga' metoder. Detta kan menas med att vi har väldigt komplexa metoder men ingen/ lite tester till dem eller hur svår eller lätt våran kod är att underhålla.
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/code_crap.jpg') }}" alt="code_CRAP">
+            <p>Exempel på kod CRAP-värde från mitt projekt.</p>
+        </div>
+    
+    <h1>Phpmetrics</h1>
+
+    <p>
+        Om jag utgår från min egen kod börjar jag med att analysera översiktigt vad rapporten tycker om min skrivna kod. 
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/phpmetrics_overview.PNG') }}" alt="phpmetrics_overview">
+            <p>PhpMetrics Overview</p>
+        </div>
+    
+    <p>
+        Här ser vi klart och tydliga hur stort mitt projekt är, gällande antal rader kod och antal klasser, ifall där hittats några buggar, eller om där finns några överträdanden i min kod. Detta kan antingen visas som fel eller kritiska indikationer. Jag får även en översikt gällande hur mycket assertions som finns i mina tester, samt medelvärdet på mina cyklomatiska komplexiteten per klass.
+
+        <br><br>
+        
+        Överlag känns följande värden ok för min del, då jag än så länge håller mig under 'standard' för många av mätvärdena som hittats, något jag väljer att titta vidare på till en början är violations.
+
+        <br><br>
+
+        Här ser jag att där finns 3 varningar och ett fel. 
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/code_violations.PNG') }}" alt="phpmetrics_violations">
+            <p>PhpMetrics Violations</p>
+        </div>
+
+    <p>
+        Varningen hänvisar till att där troligtvis finns en bugg i min kod, felet påpekar dock att där finns en gudklass eller objekt som försöker göra alldeles för mycket. Objektet har flera publika metoder, high lack of cohesion och gör mer än en specifik sak. Förslaget är att vi skall försöka bli av med antalet metoder, eller försöka splitta detta objekt till flera subobjekt.
+
+        <br><br>
+
+        Nästa steg i våran kontroll blir att titta över antalet tester som görs på min kod, enligt informationen i PhpMetrics har jag fem Test suits, 25 assertions och enbart 16% av min kod testas i dagsläget.. Detta hade vi klart kunna göra bättre och jag är väl medveten om att jag enbart gått på för att testa Deck katalogen i mitt projekt, här hade jag kunnat inkludera fler underkataloger som Entity och vissa av kontollersen.
+
+        <br><br>
+
+        Slutligen tittar jag under komplexiteten, här hittar jag att både GameController, APIControllerTwig och CardGameController har klass cyklomatisk complexitet på 11 respektive 10. Detta är också något vi hade kunnat jobba med i framtiden, se ifall vi kan försöka få ner antalet cyklomatiska komplexiten till åtminstone under 10!
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/phpmetrics_classCycle.PNG') }}" alt="classCycle">
+            <p>PhpMetrics Complexity</p>
+        </div>
+
+    <h1>Scrutinizer</h1>
+
+    <p>
+        
+    </p
 
 {% endblock %}

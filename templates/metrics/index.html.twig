@@ -104,7 +104,37 @@
     <h1>Scrutinizer</h1>
 
     <p>
-        
-    </p
+        Vi går nu över till scrutinizer för att se över vad den kan ha hittat i koden som jag låtit analysera. Till en början ser vårt projekt relativt bra ut, vi har fått en 10:a i scrutinizer testscore och våran kod har passerat bygget.
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/scrutinizer_frontPage.PNG') }}" alt="scrutinizerFrontPage">
+            <p>scrutinizer FrontPage</p>
+        </div>
+
+    <p>
+        Redan nu ser jag att kodtäckningen hade kunnat större, precis som det visades i PhpMetrics, jag hade kunnat försöka inkludera fler av klasserna och även försöka få med mig någon av controllerfilerna i mina testfall för att försöka få upp siffran. Nedan följer en annna vy på hur testfallen ser ut.
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/scrutinizer_testCoverage.PNG') }}" alt="scrutinizerCoverage">
+            <p>scrutinizer Coverage</p>
+        </div>
+
+    <p>
+        Går jag vidare i min utredning hittar jag även att där finns ett par issues som hittats i min kod, fyra mindre fel och två större som jag hade behövt gå igenom. Gällande de större så har scrutinizer häng upp sig på att jag har en tilldelning i min Card klass för $cardValue som är null, sedan har jag även en getter som då returnerar en null vilket är inkompatibelt med min dokumentation..
+        Tittar jag till dem mindre felen hittar jag att där finns kod som inte används och att där potentiellt finns fler buggar att reda.
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/scrutinizer_issues.PNG') }}" alt="scrutinizerIssues">
+            <p>Scrutinizer Issues</p>
+        </div>
+
+    <p>
+        Slutligen ser jag även att min CRAP score på vissa av metoderna som finns i GameController, CardGameController och APIControllerTwig ligger på 42 respektive 30, detta är nog också något som kan tänkas gå ner ju fler testar jag implementerar, eventuellt får jag försöka skriva om koden för att få ner CRAP scoren.
+    </p>
+
+    <h1>Förbättringar</h1>
 
 {% endblock %}

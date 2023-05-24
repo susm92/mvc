@@ -15,10 +15,9 @@ class GraphicDeckOfCardsTest extends TestCase
     public function testCreateObject()
     {
         $graphicdeckofcards = new GraphicDeckOfCards();
-        $res = $graphicdeckofcards->getCardValue();
         
         $this->assertInstanceOf('\App\Deck\GraphicDeckOfCards', $graphicdeckofcards);
-        $this->assertEquals(null, $res);
+        $this->assertEquals(null, $graphicdeckofcards->getCardValue());
     }
 
     /**

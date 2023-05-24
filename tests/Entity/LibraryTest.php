@@ -17,7 +17,7 @@ class LibraryTest extends TestCase
     {
         $library = new Library();
 
-        $this->assertEquals($library->getId(1), null);
+        $this->assertEquals($library->getId(), null);
     }
 
     public function testSetTitle()

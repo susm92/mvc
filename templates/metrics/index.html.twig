@@ -135,6 +135,17 @@
         Slutligen ser jag även att min CRAP score på vissa av metoderna som finns i GameController, CardGameController och APIControllerTwig ligger på 42 respektive 30, detta är nog också något som kan tänkas gå ner ju fler testar jag implementerar, eventuellt får jag försöka skriva om koden för att få ner CRAP scoren.
     </p>
 
+    <a href ="https://scrutinizer-ci.com/g/susm92/mvc/code-structure/main"><img src="https://scrutinizer-ci.com/g/susm92/mvc/badges/quality-score.png?b=main"></a> <a href="https://scrutinizer-ci.com/g/susm92/mvc/code-structure/main/code-coverage"><img src="https://scrutinizer-ci.com/g/susm92/mvc/badges/coverage.png?b=main"></a> <a href="https://scrutinizer-ci.com/g/susm92/mvc/inspections/708c9806-719d-4eb3-b81e-1d7315a10975/log"><img src="https://scrutinizer-ci.com/g/susm92/mvc/badges/build.png?b=main"></a>
+
     <h1>Förbättringar</h1>
+
+    <p>
+        Nu när vi gått igenom problemområden som hade kunnat göras bättre tänker jag mig att vi går vidare med några förbättringspunkter, jag börjar med att utgå från några av problemen ovan.
+
+        Något som vi lätt kan åtgärda är att få upp kodtäckningen, den ligger just nu på 13% enligt scrutinizer och här tänker jag mig att jag börjar med att lägga til testfall för Entity katalogen där Library.php och Product.php hittas. Dessa klasserna används till ORM men jag tänker mig att det borde vara möligt att lägga till testfall för dessa för att få upp kodtäckningen. Jag tror dock inte att detta kommer ha en märktbart påverkarn på resterande metoder med genom att exempelvis sänka CRAP-scoren, men det borde bidra till en högre kodtäckning överlag.
+    </p>
+
+    <h2>Analys av implementation</h2>
+
 
 {% endblock %}

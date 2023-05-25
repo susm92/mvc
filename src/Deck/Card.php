@@ -12,7 +12,7 @@ namespace App\Deck;
 class Card
 {
     /**
-     * @var cardValue used to hold current cardvalue.
+     * @var string|null $cardValue used to hold current cardvalue.
      */
     protected $cardValue;
 
@@ -51,7 +51,7 @@ class Card
      * Real getter function for the @var cardvalue
      * Only used for testing purpose..
      *
-     * returns null if not initiated, otherwise a string.
+     * returns null if not assigned, otherwise a string.
      * @return ?string
      */
     public function getCardValue(): ?string

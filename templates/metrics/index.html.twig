@@ -143,6 +143,10 @@
         Nu när vi gått igenom problemområden som hade kunnat göras bättre tänker jag mig att vi går vidare med några förbättringspunkter, jag börjar med att utgå från några av problemen ovan.
 
         Något som vi lätt kan åtgärda är att få upp kodtäckningen, den ligger just nu på 13% enligt scrutinizer och här tänker jag mig att jag börjar med att lägga til testfall för Entity katalogen där Library.php och Product.php hittas. Dessa klasserna används till ORM men jag tänker mig att det borde vara möligt att lägga till testfall för dessa för att få upp kodtäckningen. Jag tror dock inte att detta kommer ha en märktbart påverkarn på resterande metoder med genom att exempelvis sänka CRAP-scoren, men det borde bidra till en högre kodtäckning överlag.
+
+        <br><br>
+
+        Något jag i senare steg kommer försöka ta mig an är att försöka bli av med några av felen som hittats i min kod i Scrutinizer, jag tänker mig att jag under issues tittar främst på minor och försöker jobba bort dessa, vi kan nog även ta oss an ett major issue om där hittas några sådana. I takt med att vi betar av felen som hittats i våran kod tror jag att det överlag kommer förbättra våran kodkvalitet men jag är osäker på om det verkligen kommer påverka våran CRAP-score.
     </p>
 
     <h2>Analys av implementation</h2>

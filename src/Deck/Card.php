@@ -26,6 +26,9 @@ class Card
         'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦'
     ];
 
+    /**
+     * Constructor method for class.
+     */
     public function __construct()
     {
         $this->cardValue = null;
@@ -48,9 +51,10 @@ class Card
      * Real getter function for the @var cardvalue
      * Only used for testing purpose..
      *
-     * @return null
+     * returns null if not initiated, otherwise a string.
+     * @return ?string
      */
-    public function getCardValue()
+    public function getCardValue(): ?string
     {
         return $this->cardValue;
     }

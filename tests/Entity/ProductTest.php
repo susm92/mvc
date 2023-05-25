@@ -5,14 +5,24 @@ namespace App\Entity;
 use App\Repository\ProductRepository;;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class for class Products
+ */
 class ProductTest extends TestCase
 {
+    /**
+     * Methods used to verify that the object is correctly created
+     * and that constructor is the same as for the real class.
+     */
     public function testCreateObject()
     {
         $product = new Product();
         $this->assertInstanceOf('\App\Entity\Product', $product);
     }
 
+    /**
+     * Method used to verify that the products id can be allocated
+     */
     public function testGetId()
     {
         $product = new Product();
@@ -20,6 +30,10 @@ class ProductTest extends TestCase
         $this->assertEquals($product->getId(), null);
     }
 
+    /**
+     * Methods used to check that setter and getters work as intended
+     * here it is clearly demonstrated for the name
+     */
     public function testSetName()
     {
         $product = new Product();
@@ -29,6 +43,10 @@ class ProductTest extends TestCase
         $this->assertEquals($product->getName(), $name);
     }
 
+    /**
+     * Methods used to check that setter and getters work as intended
+     * here it is cleary demonstrated for the value
+     */
     public function testSetValue()
     {
         $product = new Product();

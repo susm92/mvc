@@ -54,7 +54,6 @@ class LibraryController extends AbstractController
 
     #[Route('/library/show', name: 'library_show')]
     public function showLibrary(
-        LibraryRepository $libraryRepository,
         EntityManagerInterface $entityManager
     ): Response {
 

@@ -63,7 +63,7 @@ class Card
      * Returns the current value of @var cardValue
      * Can be seen as a 'getter' function
      */
-    public function showValue(): string
+    public function showValue(): ?string
     {
         return $this->cardValue;
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685001754">
-  <project timestamp="1685001754">
+<coverage generated="1685005568">
+  <project timestamp="1685005568">
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/APIControllerTwig.php">
       <class name="App\Controller\APIControllerTwig" namespace="global">
         <metrics complexity="17" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="0" elements="66" coveredelements="0"/>
@@ -319,15 +319,15 @@
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/MainControllerTwig.php">
       <class name="App\Controller\MainControllerTwig" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
+        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
       </class>
-      <line num="11" type="method" name="home" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="14" type="stmt" count="1"/>
-      <line num="17" type="method" name="about" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="20" type="stmt" count="1"/>
-      <line num="23" type="method" name="report" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="26" type="stmt" count="1"/>
-      <metrics loc="29" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
+      <line num="11" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="17" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="23" type="method" name="report" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <metrics loc="29" ncloc="29" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/MetricsController.php">
       <class name="App\Controller\MetricsController" namespace="global">
@@ -575,6 +575,6 @@
       <line num="38" type="stmt" count="0"/>
       <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="21" loc="1421" ncloc="1242" classes="20" methods="85" coveredmethods="37" conditionals="0" coveredconditionals="0" statements="363" coveredstatements="59" elements="448" coveredelements="96"/>
+    <metrics files="21" loc="1421" ncloc="1242" classes="20" methods="85" coveredmethods="34" conditionals="0" coveredconditionals="0" statements="363" coveredstatements="56" elements="448" coveredelements="90"/>
   </project>
 </coverage>

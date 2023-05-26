@@ -30,4 +30,11 @@ phpstan.neon
 # /public/build/
 npm-debug.log
 yarn-error.log
+
+/public/build/app.css
+/public/build/app.js
+/public/build/entrypoints.json
+/public/build/runtime.json
+/public/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js
+
 ###< symfony/webpack-encore-bundle ###

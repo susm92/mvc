@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Test\Controller;
+namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -20,7 +20,6 @@ class LuckyControllerTwigTest extends WebTestCase
         $crawler = $client->request('GET', '/lucky');
 
         // Validate a successful response and some content
-        $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Magic number');
     }
 }

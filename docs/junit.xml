@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="25" assertions="38" errors="0" warnings="0" failures="0" skipped="0" time="0.303785">
-    <testsuite name="Project Test Suite" tests="25" assertions="38" errors="0" warnings="0" failures="0" skipped="0" time="0.303785">
-      <testsuite name="App\Test\Controller\LuckyControllerTwigTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Controller/LuckyControllerTwigTest.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.279754">
-        <testcase name="testLucky" class="App\Test\Controller\LuckyControllerTwigTest" classname="App.Test.Controller.LuckyControllerTwigTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Controller/LuckyControllerTwigTest.php" line="15" assertions="3" time="0.279754"/>
+  <testsuite name="" tests="25" assertions="37" errors="0" warnings="0" failures="0" skipped="0" time="0.291269">
+    <testsuite name="Project Test Suite" tests="25" assertions="37" errors="0" warnings="0" failures="0" skipped="0" time="0.291269">
+      <testsuite name="App\Controller\LuckyControllerTwigTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Controller/LuckyControllerTwigTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.271784">
+        <testcase name="testLucky" class="App\Controller\LuckyControllerTwigTest" classname="App.Controller.LuckyControllerTwigTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Controller/LuckyControllerTwigTest.php" line="15" assertions="2" time="0.271784"/>
       </testsuite>
-      <testsuite name="App\Deck\CardGraphicTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.002004">
-        <testcase name="testCreateObject" class="App\Deck\CardGraphicTest" classname="App.Deck.CardGraphicTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardGraphicTest.php" line="15" assertions="2" time="0.002004"/>
+      <testsuite name="App\Deck\CardGraphicTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001719">
+        <testcase name="testCreateObject" class="App\Deck\CardGraphicTest" classname="App.Deck.CardGraphicTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardGraphicTest.php" line="15" assertions="2" time="0.001719"/>
       </testsuite>
-      <testsuite name="App\Deck\CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.005182">
-        <testcase name="testCreateObject" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="15" assertions="1" time="0.001104"/>
-        <testcase name="testAddCards" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="24" assertions="5" time="0.002965"/>
-        <testcase name="testAddCard" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="42" assertions="1" time="0.000598"/>
-        <testcase name="testDraw" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="53" assertions="1" time="0.000515"/>
+      <testsuite name="App\Deck\CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.003711">
+        <testcase name="testCreateObject" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="15" assertions="1" time="0.000776"/>
+        <testcase name="testAddCards" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="24" assertions="5" time="0.002243"/>
+        <testcase name="testAddCard" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="42" assertions="1" time="0.000325"/>
+        <testcase name="testDraw" class="App\Deck\CardHandTest" classname="App.Deck.CardHandTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardHandTest.php" line="53" assertions="1" time="0.000367"/>
       </testsuite>
-      <testsuite name="App\Deck\CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.002553">
-        <testcase name="testCreateObject" class="App\Deck\CardTest" classname="App.Deck.CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" line="15" assertions="2" time="0.000504"/>
-        <testcase name="testGetAmount" class="App\Deck\CardTest" classname="App.Deck.CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" line="27" assertions="1" time="0.000425"/>
-        <testcase name="testDraw" class="App\Deck\CardTest" classname="App.Deck.CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" line="36" assertions="2" time="0.001623"/>
+      <testsuite name="App\Deck\CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.002264">
+        <testcase name="testCreateObject" class="App\Deck\CardTest" classname="App.Deck.CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" line="15" assertions="2" time="0.000316"/>
+        <testcase name="testGetAmount" class="App\Deck\CardTest" classname="App.Deck.CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" line="27" assertions="1" time="0.000374"/>
+        <testcase name="testDraw" class="App\Deck\CardTest" classname="App.Deck.CardTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/CardTest.php" line="36" assertions="2" time="0.001575"/>
       </testsuite>
-      <testsuite name="App\Deck\DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.004672">
-        <testcase name="testCreateObject" class="App\Deck\DeckOfCardsTest" classname="App.Deck.DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" line="15" assertions="1" time="0.000814"/>
-        <testcase name="testShowDeck" class="App\Deck\DeckOfCardsTest" classname="App.Deck.DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" line="24" assertions="1" time="0.000361"/>
-        <testcase name="testShuffleDeck" class="App\Deck\DeckOfCardsTest" classname="App.Deck.DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" line="35" assertions="1" time="0.003497"/>
+      <testsuite name="App\Deck\DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.003829">
+        <testcase name="testCreateObject" class="App\Deck\DeckOfCardsTest" classname="App.Deck.DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" line="15" assertions="1" time="0.000727"/>
+        <testcase name="testShowDeck" class="App\Deck\DeckOfCardsTest" classname="App.Deck.DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" line="24" assertions="1" time="0.000431"/>
+        <testcase name="testShuffleDeck" class="App\Deck\DeckOfCardsTest" classname="App.Deck.DeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/DeckOfCardsTest.php" line="35" assertions="1" time="0.002672"/>
       </testsuite>
-      <testsuite name="App\Deck\GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" tests="3" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.004406">
-        <testcase name="testCreateObject" class="App\Deck\GraphicDeckOfCardsTest" classname="App.Deck.GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" line="15" assertions="2" time="0.001161"/>
-        <testcase name="testShuffleDeck" class="App\Deck\GraphicDeckOfCardsTest" classname="App.Deck.GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" line="26" assertions="1" time="0.002425"/>
-        <testcase name="testPoints" class="App\Deck\GraphicDeckOfCardsTest" classname="App.Deck.GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" line="43" assertions="4" time="0.000821"/>
+      <testsuite name="App\Deck\GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" tests="3" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.003740">
+        <testcase name="testCreateObject" class="App\Deck\GraphicDeckOfCardsTest" classname="App.Deck.GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" line="15" assertions="2" time="0.000806"/>
+        <testcase name="testShuffleDeck" class="App\Deck\GraphicDeckOfCardsTest" classname="App.Deck.GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" line="26" assertions="1" time="0.002433"/>
+        <testcase name="testPoints" class="App\Deck\GraphicDeckOfCardsTest" classname="App.Deck.GraphicDeckOfCardsTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Deck/GraphicDeckOfCardsTest.php" line="43" assertions="4" time="0.000502"/>
       </testsuite>
-      <testsuite name="App\Entity\LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" tests="6" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.002749">
-        <testcase name="testCreateObject" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="17" assertions="1" time="0.000703"/>
-        <testcase name="testGetId" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="26" assertions="1" time="0.000465"/>
-        <testcase name="testSetTitle" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="37" assertions="1" time="0.000449"/>
-        <testcase name="testSetIsbn" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="50" assertions="1" time="0.000504"/>
-        <testcase name="testSetAuthor" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="63" assertions="1" time="0.000318"/>
-        <testcase name="testSetImage" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="76" assertions="1" time="0.000310"/>
+      <testsuite name="App\Entity\LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" tests="6" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.002400">
+        <testcase name="testCreateObject" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="17" assertions="1" time="0.000694"/>
+        <testcase name="testGetId" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="26" assertions="1" time="0.000347"/>
+        <testcase name="testSetTitle" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="37" assertions="1" time="0.000303"/>
+        <testcase name="testSetIsbn" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="50" assertions="1" time="0.000423"/>
+        <testcase name="testSetAuthor" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="63" assertions="1" time="0.000319"/>
+        <testcase name="testSetImage" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/LibraryTest.php" line="76" assertions="1" time="0.000314"/>
       </testsuite>
-      <testsuite name="App\Entity\ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.002468">
-        <testcase name="testCreateObject" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="17" assertions="1" time="0.001326"/>
-        <testcase name="testGetId" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="26" assertions="1" time="0.000391"/>
-        <testcase name="testSetName" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="37" assertions="1" time="0.000317"/>
-        <testcase name="testSetValue" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="50" assertions="1" time="0.000433"/>
+      <testsuite name="App\Entity\ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001822">
+        <testcase name="testCreateObject" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="17" assertions="1" time="0.000671"/>
+        <testcase name="testGetId" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="26" assertions="1" time="0.000380"/>
+        <testcase name="testSetName" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="37" assertions="1" time="0.000315"/>
+        <testcase name="testSetValue" class="App\Entity\ProductTest" classname="App.Entity.ProductTest" file="/home/smrkovic/dbwebb_kurser/mvc/me/report/tests/Entity/ProductTest.php" line="50" assertions="1" time="0.000456"/>
       </testsuite>
     </testsuite>
   </testsuite>

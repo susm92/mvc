@@ -20,6 +20,7 @@ class LuckyControllerTwigTest extends WebTestCase
         $crawler = $client->request('GET', '/lucky');
 
         // Validate a successful response and some content
+        $this->assertTrue($client->getResponse()->isSuccessful());
         $this->assertSelectorTextContains('h1', 'Magic number');
     }
 }

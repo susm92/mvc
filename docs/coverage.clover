@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685095231">
-  <project timestamp="1685095231">
+<coverage generated="1685098653">
+  <project timestamp="1685098653">
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/APIControllerTwig.php">
       <class name="App\Controller\APIControllerTwig" namespace="global">
         <metrics complexity="17" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="0" elements="66" coveredelements="0"/>
@@ -319,23 +319,23 @@
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/MainControllerTwig.php">
       <class name="App\Controller\MainControllerTwig" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
       </class>
-      <line num="11" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="14" type="stmt" count="0"/>
-      <line num="17" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="23" type="method" name="report" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <metrics loc="29" ncloc="29" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
+      <line num="11" type="method" name="home" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="17" type="method" name="about" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="23" type="method" name="report" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <metrics loc="29" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/MetricsController.php">
       <class name="App\Controller\MetricsController" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="11" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="14" type="stmt" count="0"/>
-      <metrics loc="17" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      <line num="11" type="method" name="home" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <metrics loc="17" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/ProductController.php">
       <class name="App\Controller\ProductController" namespace="global">
@@ -380,30 +380,30 @@
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/QuoteControllerTwig.php">
       <class name="App\Controller\QuoteControllerTwig" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="21" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="21" coveredelements="21"/>
       </class>
-      <line num="11" type="method" name="jsonNumber" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="14" type="stmt" count="0"/>
-      <line num="15" type="stmt" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <metrics loc="40" ncloc="39" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="21" coveredelements="0"/>
+      <line num="11" type="method" name="jsonNumber" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <metrics loc="40" ncloc="39" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="21" coveredelements="21"/>
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Deck/Card.php">
       <class name="App\Deck\Card" namespace="global">
@@ -575,6 +575,6 @@
       <line num="38" type="stmt" count="0"/>
       <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="21" loc="1423" ncloc="1244" classes="20" methods="85" coveredmethods="35" conditionals="0" coveredconditionals="0" statements="363" coveredstatements="64" elements="448" coveredelements="99"/>
+    <metrics files="21" loc="1423" ncloc="1244" classes="20" methods="85" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="363" coveredstatements="88" elements="448" coveredelements="128"/>
   </project>
 </coverage>

@@ -12,7 +12,7 @@ class GraphicDeckOfCardsTest extends TestCase
     /**
      * Method used to verify that the object is correctly created also that constructor is the same as for parent class.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $graphicdeckofcards = new GraphicDeckOfCards();
         
@@ -23,7 +23,7 @@ class GraphicDeckOfCardsTest extends TestCase
     /**
      * Verify that shuffle deck works as intended
      */
-    public function testShuffleDeck()
+    public function testShuffleDeck(): void
     {
         $graphicdeckofcards = new GraphicDeckOfCards();
 
@@ -40,7 +40,7 @@ class GraphicDeckOfCardsTest extends TestCase
      * jacks, queen och king all return 10
      * no cards drawn should indicate null
      */
-    public function testPoints()
+    public function testPoints(): void
     {
         $graphicdeckofcards = new GraphicDeckOfCards();
         

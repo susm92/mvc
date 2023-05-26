@@ -14,7 +14,7 @@ class ProductTest extends TestCase
      * Methods used to verify that the object is correctly created
      * and that constructor is the same as for the real class.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $product = new Product();
         $this->assertInstanceOf('\App\Entity\Product', $product);
@@ -23,7 +23,7 @@ class ProductTest extends TestCase
     /**
      * Method used to verify that the products id can be allocated
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $product = new Product();
 
@@ -34,7 +34,7 @@ class ProductTest extends TestCase
      * Methods used to check that setter and getters work as intended
      * here it is clearly demonstrated for the name
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $product = new Product();
         $name = 'susm20';
@@ -47,7 +47,7 @@ class ProductTest extends TestCase
      * Methods used to check that setter and getters work as intended
      * here it is cleary demonstrated for the value
      */
-    public function testSetValue()
+    public function testSetValue(): void
     {
         $product = new Product();
         $value = 12345;

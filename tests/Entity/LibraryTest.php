@@ -14,7 +14,7 @@ class LibraryTest extends TestCase
      * Method used to verify that the object is correctly created
      * also that constructor is the same as for parent class.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $library = new Library();
         $this->assertInstanceOf('\App\Entity\Library', $library);
@@ -23,7 +23,7 @@ class LibraryTest extends TestCase
     /**
      * Method used to verify getter method for id
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $library = new Library();
 
@@ -34,7 +34,7 @@ class LibraryTest extends TestCase
      * Method used to verify that setters and getters work
      * below is cleary demonstrated for Title
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $library = new Library();
         $title = 'test';
@@ -47,7 +47,7 @@ class LibraryTest extends TestCase
      * Method used to verify that setters and getters work
      * below is cleary demonstrated for Isbn
      */
-    public function testSetIsbn()
+    public function testSetIsbn(): void
     {
         $library = new Library();
         $isbn = 12345;
@@ -60,7 +60,7 @@ class LibraryTest extends TestCase
      * Method used to verify that setters and getters work
      * below is cleary demonstrated for Author
      */
-    public function testSetAuthor()
+    public function testSetAuthor(): void
     {
         $library = new Library();
         $author = 'Test Testesson';
@@ -73,7 +73,7 @@ class LibraryTest extends TestCase
      * Method used to verify that setters and getters work
      * below is cleary demonstrated for Image
      */
-    public function testSetImage()
+    public function testSetImage(): void
     {
         $library = new Library();
         $image = 'Test Testesson';

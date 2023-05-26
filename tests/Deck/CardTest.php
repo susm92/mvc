@@ -12,7 +12,7 @@ class CardTest extends TestCase
     /**
      * Construct object and verify that is is a card object
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new Card();
         $this->assertInstanceOf('\App\Deck\Card', $card);
@@ -24,7 +24,7 @@ class CardTest extends TestCase
     /**
      * Verify that amount of cards are 13 * 4 and that an int is returned
      */
-    public function testGetAmount()
+    public function testGetAmount(): void
     {
         $card = new Card();
         $this->assertEquals(52, $card->getAmount());
@@ -33,7 +33,7 @@ class CardTest extends TestCase
     /**
      * verified that draw function returns removed 'cards' from the deck and also that showValue shows a string.
      */
-    public function testDraw()
+    public function testDraw(): void
     {
         $card = new Card();
         $card->draw();

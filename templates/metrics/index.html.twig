@@ -149,6 +149,8 @@
         Något jag i senare steg kommer försöka ta mig an är att försöka bli av med några av felen som hittats i min kod i Scrutinizer, jag tänker mig att jag under issues tittar främst på minor och försöker jobba bort dessa, vi kan nog även ta oss an ett major issue om där hittas några sådana. I takt med att vi betar av felen som hittats i våran kod tror jag att det överlag kommer förbättra våran kodkvalitet men jag är osäker på om det verkligen kommer påverka våran CRAP-score.
 
         <br><br>
+
+        Jag kommer även ge mig på refactoring på en av klasserna vars cyklomatiska komplexitet är 10 eller mer i PhpMetrics, här borde jag nog kunna få ner komplexiteten om jag skriver om klass kontrollerna så att de innehåller mer privata metoder och variabler så att där inte behöver göras lika beräkningar i själva routen.
     </p>
 
     <h2>Analys av implementation</h2>
@@ -192,7 +194,7 @@
 
         <br><br>
 
-        Efter att samtliga av dessa implementation utförs så ser jag att kodkvalitet har gått upp då jag kunnat verifiera att kod och buggar åtgärdats, dock är det så att resterna resultat står kvar gällande CRAP-score osv... Överlag är det dock så att kodkvaliteten kunnat ökats markant.
+        Då ovan fel har åtgärdats har vi enbart en fil med mindre fel kvar, vilket då är CardGameController.. Följande klass kommar jag att låta vara kvar då jag anser att även om jag ändrar i den filen så kommer det inte att påverka resterande CRAP-score. Något som dock borde ha påverkats i och med att de andra felen åtgärdats borde vara att kodkvaliteten överlag gått upp och programmet blivit stabilare än tidigare, detta är dock inte något som jag kan se i vare sig PhpMetrics eller Scrutinizer, utan känslan jag får.
     </p>
 
     <div class="kmom06-metrics">
@@ -201,12 +203,15 @@
         </div>
 
         <div class="kmom06-metrics">
-            <img src="{{ asset('img/kmom06/codeBugs_after.PNG') }}" alt="scrutinizerBugs">
+            <img src="{{ asset('img/kmom06/codeBugs_after_2.PNG') }}" alt="scrutinizerBugs">
             <p>Scrutinizer buggar efter implementation.</p>
         </div>
 
 
     <p>
+        Här valde jag att flytta ut de vilkorliga satserna som faktiskt verifierar så att sessionen som skickas med i routern är satta eller inte. De routes som blev påverkade var testDraw och testManyCards i klassen CardGameController. I och med att jag flyttade ut de villkorliga satsen och tilldelningen så sänktes min klass komplexitet från 10 till 6.
+
+        Där går även i PhpMetrics att se så att medelvärdet per class gått ner med ca 0.20, vilket även detta bidrar till att göra det lättare att underhålla koden i framtiden.
     </p>
 
         <div class="kmom06-metrics">
@@ -224,4 +229,17 @@
             <p>PhpMetrics cyklomatisk komplexitet efter implementation från översiktliga bilden.</p>
         </div>
     
+    <h1>Diskussion</h1>
+
+    <p>
+        Frågan är om man aktivt kan jobba med kodkvalitet och 'clean code' på följande sätt?
+    
+        <br><br>
+
+        Ja, men spontant vill jag påstå detta. Jag har även i mina ovan exempel kunnat påvisa att vi genom att följa PhpMetrics och Scrutinizer kunnat spåra ner områden som ses som ett bekymmersområde och där extra jobb kan behövas. Genom att beta av bekymren och problemen som hittas i dessa verktyg kan vi ändå påvisa att vi genom vårt arbete försökt påverka kodkvaliteten och stabiliteten av vårt program. Dock är detta något som kan vara oerhört tidskrävande och beroende på hur det ser ut tidsmässigt kan det vara till en nackdel att behöva beta av en massa logfiler eller rapporter.
+
+        <br><br>
+
+        En annan möjlighet att jobba mot 'clean code' kan vara att skriva testfall för din kod, men detta är väl bara möjligt om man har personer som dedikerat skriver testfall medan andra skriver den faktiska koden.. Även detta blir också väldigt tidskrävande och pressat beroende på hur mycket tid man har över innan projektets deadline. 
+    </p>
 {% endblock %}

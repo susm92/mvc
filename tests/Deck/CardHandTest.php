@@ -12,7 +12,7 @@ class CardHandTest extends TestCase
     /**
      * Construct object and verify that is is a card object, 
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $cardhand = new CardHand();
         $this->assertInstanceOf('\App\Deck\CardHand', $cardhand);
@@ -21,7 +21,7 @@ class CardHandTest extends TestCase
     /**
      * Used to test that addCards function works and that the amount in card is lowered by the number of cards drawn.
      */
-    public function testAddCards()
+    public function testAddCards(): void
     {
         $cardhand = new CardHand();
         $card = new Card();
@@ -39,7 +39,7 @@ class CardHandTest extends TestCase
     /**
      * Checking that the addCard function works.
      */
-    public function testAddCard()
+    public function testAddCard(): void
     {
         $cardhand = new CardHand();
 
@@ -50,7 +50,7 @@ class CardHandTest extends TestCase
     /**
      * Test draw card, checking that the card in card is the same as the one in cardhand, so that the same card has been drawn.
      */
-    public function testDraw()
+    public function testDraw(): void
     {
         $cardhand = new CardHand();
         $card = new Card();

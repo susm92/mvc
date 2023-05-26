@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685108195">
-  <project timestamp="1685108195">
+<coverage generated="1685112336">
+  <project timestamp="1685112336">
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/APIControllerTwig.php">
       <class name="App\Controller\APIControllerTwig" namespace="global">
         <metrics complexity="17" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="0" elements="66" coveredelements="0"/>
@@ -154,15 +154,15 @@
       <line num="87" type="stmt" count="0"/>
       <line num="88" type="stmt" count="0"/>
       <line num="90" type="stmt" count="0"/>
-      <line num="96" type="method" name="getCard" visibility="private" complexity="3" crap="12" count="0"/>
-      <line num="98" type="stmt" count="0"/>
-      <line num="99" type="stmt" count="0"/>
-      <line num="102" type="stmt" count="0"/>
-      <line num="105" type="method" name="getHand" visibility="private" complexity="3" crap="12" count="0"/>
+      <line num="101" type="method" name="getCard" visibility="private" complexity="3" crap="12" count="0"/>
+      <line num="103" type="stmt" count="0"/>
+      <line num="104" type="stmt" count="0"/>
       <line num="107" type="stmt" count="0"/>
-      <line num="108" type="stmt" count="0"/>
-      <line num="111" type="stmt" count="0"/>
-      <metrics loc="114" ncloc="111" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="0" elements="45" coveredelements="0"/>
+      <line num="114" type="method" name="getHand" visibility="private" complexity="3" crap="12" count="0"/>
+      <line num="116" type="stmt" count="0"/>
+      <line num="117" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
+      <metrics loc="123" ncloc="112" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="0" elements="45" coveredelements="0"/>
     </file>
     <file name="/home/smrkovic/dbwebb_kurser/mvc/me/report/src/Controller/GameController.php">
       <class name="App\Controller\GameController" namespace="global">
@@ -577,6 +577,6 @@
       <line num="38" type="stmt" count="0"/>
       <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="21" loc="1434" ncloc="1252" classes="20" methods="87" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="363" coveredstatements="88" elements="450" coveredelements="128"/>
+    <metrics files="21" loc="1443" ncloc="1253" classes="20" methods="87" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="363" coveredstatements="88" elements="450" coveredelements="128"/>
   </project>
 </coverage>

@@ -57,13 +57,8 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response {
 
-        if (!$session->get('card') || !$session->get('CardHand') || $session->get('card') == null || $session->get('CardHand') == null) {
-            $session->set('card', new Card());
-            $session->set('CardHand', new CardHand());
-        }
-
-        $card = $session->get("card");
-        $hand = $session->get("CardHand");
+        $card = $this->getCard($session);
+        $hand = $this->getHand($session);
 
         $data = [
             "card" => $card->draw(),
@@ -84,13 +79,8 @@ class CardGameController extends AbstractController
             throw new \Exception("Not enough cards!");
         }
 
-        if (!$session->get('card') || !$session->get('CardHand') || $session->get('card') == null || $session->get('CardHand') == null) {
-            $session->set('card', new Card());
-            $session->set('CardHand', new CardHand());
-        }
-
-        $hand = $session->get('CardHand');
-        $hand->addCards($session->get('card'), $num);
+        $hand = $this->getHand($session);
+        $hand->addCards($this->getCard($session), $num);
 
         $data = [
             "hand" => $hand->showCards(),
@@ -98,5 +88,35 @@ class CardGameController extends AbstractController
         ];
 
         return $this->render('cardGame/sites/number.html.twig', $data);
+    }
+
+    //
+    // RE-Factored functions for Hand & CardHand
+    //
+
+    /**
+     * Private method used to extract the card
+     * Depends session is set or not
+     */
+    private function getCard(SessionInterface $session): Card
+    {
+        if (!$session->has('card') || $session->get('card') == null) {
+            $session->set('card', new Card());
+        }
+
+        return $session->get('card');
+    }
+
+    /**
+     * Private method used to extract the cardhand
+     * Depends session is set or not
+     */
+    private function getHand(SessionInterface $session): CardHand
+    {
+        if (!$session->has('CardHand') || $session->get('CardHand') == null) {
+            $session->set('CardHand', new CardHand());
+        }
+
+        return $session->get('CardHand');
     }
 }

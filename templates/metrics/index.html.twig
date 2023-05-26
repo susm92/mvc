@@ -147,18 +147,81 @@
         <br><br>
 
         Något jag i senare steg kommer försöka ta mig an är att försöka bli av med några av felen som hittats i min kod i Scrutinizer, jag tänker mig att jag under issues tittar främst på minor och försöker jobba bort dessa, vi kan nog även ta oss an ett major issue om där hittas några sådana. I takt med att vi betar av felen som hittats i våran kod tror jag att det överlag kommer förbättra våran kodkvalitet men jag är osäker på om det verkligen kommer påverka våran CRAP-score.
+
+        <br><br>
     </p>
 
     <h2>Analys av implementation</h2>
 
     <p>
-        Kodtäckning
+        Jag har i och med detta lagt till testfall för klasserna som finns under Library.php och Product.php, här har jag även lagt till testfall på vissa Controllers för att öka kodtäckningen för våran kod överlag. Mina controllers som jag lagt till testfall för är LuckyControllerTwig, MainControllerTwig, MetricsControllerTwig och QuoteControllerTwig.
+
+        <br><br>
+
+        Som förvänt har inte min CRAP-score och inte heller kodkomplexiteten påverkats men som vi kan se i Scrutinizer så har våran kodtäckning ökat markant, från 13% hela vägen till 12.5%.
     </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/codeCoverage_before.PNG') }}" alt="scrutinizerCoverage">
+            <p>Scrutinizer kodtäckning innan implementation.</p>
+        </div>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/codeCoverage_after.PNG') }}" alt="scrutinizerCoverage">
+            <p>Scrutinizer kodtäckning efter implementation.</p>
+        </div>
 
     <p>
-        Issues
+        I nästa implementation gick jag vidare med att hantera samtliga av mina issues som fanns under Scrutinizer issues. Här har jag fått ändra i metoderna som fanns i Card.php, LibraryController.php men även genom att lägga till två variabler i Kernel.php.
+
+        <br><br>
+
+        Om vi börjar med LibraryController.php så hittade jag att där fanns ett argument i klass routen som inte användes, här tog jag då bort LibraryRepository som argument i metoden för just den routen.
+
+        <br><br>
+
+        Nästa fel hittades i Card.php, här fanns tre olika fel, det första var att return på metoden showValue har ändrats till ?string, detta då den skyddade variabeln faktiskt sätts till null i konstruktorn när objektet skapas. tidigare var denna satt till string och enligt Scrutinizer sågs detta som ett Major issue..
+        <br>
+        Nästa fel var att jag fick ändra beskrivningen på cardValue från @var cardValue till '@var null|string cardValue', detta då som ovan, vid objektinitialisering är den satt till null.
+        <br>
+        Slutligen fick jag ändra på metoden getCardValue så att även denna har return-typ ?string, detta är på grund av samma fel som beskrevs tidigare.
+        
+        <br><br>
+
+        Slutligen var jag tvungen att lägga till variablerna $instanceOf och $name till Kernel.php filen, detta då scrutinizer hittade att dessa assertions används men att de inte kunde hittas i Kernel.
+
+        <br><br>
+
+        Efter att samtliga av dessa implementation utförs så ser jag att kodkvalitet har gått upp då jag kunnat verifiera att kod och buggar åtgärdats, dock är det så att resterna resultat står kvar gällande CRAP-score osv... Överlag är det dock så att kodkvaliteten kunnat ökats markant.
     </p>
 
-    
+    <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/codeBugs_before.PNG') }}" alt="scrutinizerBugs">
+            <p>Scrutinizer buggar innan implementation.</p>
+        </div>
 
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/codeBugs_after.PNG') }}" alt="scrutinizerBugs">
+            <p>Scrutinizer buggar efter implementation.</p>
+        </div>
+
+
+    <p>
+    </p>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/classCyclomatic_before.PNG') }}" alt="phpmetricsCC">
+            <p>PhpMetrics cyklomatisk komplexitet innan implementation.</p>
+        </div>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/classCyclomatic_after.PNG') }}" alt="phpmetricsCC">
+            <p>PhpMetrics cyklomatisk komplexitet efter implementation.</p>
+        </div>
+
+        <div class="kmom06-metrics">
+            <img src="{{ asset('img/kmom06/classCyclomatic_after_2.PNG') }}" alt="phpmetricsCC">
+            <p>PhpMetrics cyklomatisk komplexitet efter implementation från översiktliga bilden.</p>
+        </div>
+    
 {% endblock %}

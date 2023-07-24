@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Project{% endblock %}
+
+{% block body %}
+<h1>Project</h1>
+
+<p>
+    Hi!
+    <br><br>
+    This is the official website for my project in this course, you are able to test your skills against the computer in a Game of BlackJack, after the game you will be able to type your username and check the scoreboard of the previous players.
+    <br><br>
+    I do also have a Json API, so that you can check your score through API information.
+    There is also a database model on this website, with all previous highscores.
+    <!-- A pair of Aces are an automatical win... as long as the computer doesn't get the same.
+    -->
+</p>
+
+<p>Click on the link called 'Start Game' to give it a try, otherwise feel free to browse the documentation for this setup.</p>
+<ul>
+    <li><a href="{{ path('doc') }}">Documentation</a></li>
+    <li><a href="{{ path('init') }}">Start Game</a></li>
+</ul>
+
+{% endblock %}

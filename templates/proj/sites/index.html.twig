@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends "proj/base.html.twig" %}
 
 {% block title %}Project{% endblock %}
 
@@ -9,19 +9,15 @@
     Hej!
     <br><br>
     Detta är den officiella sidan för mitt projekt i MVC kursen, här har du möjligheten att spela Black Jack mot "dealern". Tanken är att spelaren ska kunna spela mellan 1-3 händer mot datorn.
-    <br><br>
-    {# I do also have a Json API, so that you can check your score through API information.
-    There is also a database model on this website, with all previous highscores. #}
-    <!-- A pair of Aces are an automatical win... as long as the computer doesn't get the same.
-    -->
 </p>
 
-<p>Nedan hittar du länkar som då startar spelet, klicka på "Starta spel" om du vill testa på en runda. Nedan hittas även dokumentation kring spelet som då visar på reglerna.</p>
+<p>
+    Nedan hittar du länkar som då startar spelet, klicka på "Starta spel" om du vill testa på en runda. Nedan hittas även dokumentation kring spelet. Om du vill läsa mer kring information kring spelet och tankegången kring det hittas det under about i vänstra hörnet.
+</p>
 
 
 <ul class="redirect">
-    <li><a href="{{ path('projAbout') }}">Dokumentation</a></li>
-    <br>
+    <li><a href="{{ path('projDoc') }}">Dokumentation</a></li>
     <li><a href="{{ path('projGame_get') }}">Starta spel</a></li>
 </ul>
 

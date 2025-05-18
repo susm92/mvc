@@ -1,10 +1,10 @@
-{% extends "base.html.twig" %}
+{% extends "proj/base.html.twig" %}
 
 {% block title %}Black Jack - Player {{ player }}{% endblock %}
 
 {% block body %}
 
-<h1>Black Jack [Player {{ player }} of {{ nrOfPlayers }}]</h1>
+<h1>Black Jack [Hand {{ player }} of {{ nrOfPlayers }}]</h1>
 
 {% if hand is not empty %}
     <p>Cards in hand:</p>

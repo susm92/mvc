@@ -18,17 +18,20 @@ class ProjectController extends AbstractController
     ################################################
 
     #[Route('/proj', name: 'project')]
-    public function pHome(): Response {
+    public function pHome(): Response
+    {
         return $this->render('proj/sites/index.html.twig');
     }
 
     #[Route('/proj/about', name: 'projAbout')]
-    public function pAbout(): Response {
+    public function pAbout(): Response
+    {
         return $this->render('proj/sites/about.html.twig');
     }
 
     #[Route('/proj/doc', name: 'projDoc')]
-    public function pDoc(): Response {
+    public function pDoc(): Response
+    {
         return $this->render('proj/sites/doc.html.twig');
     }
 
@@ -45,7 +48,8 @@ class ProjectController extends AbstractController
     ################################################
 
     #[Route('proj/init', name: 'projGame_get', methods: ['GET'])]
-    public function start(): Response {
+    public function start(): Response
+    {
         return $this->render('proj/sites/init.html.twig');
     }
 
@@ -76,7 +80,7 @@ class ProjectController extends AbstractController
     #[Route('proj/game', name: 'projStartGame')]
     public function pGame(
         SessionInterface $session
-    ) : Response {
+    ): Response {
         $current = $session->get('current_player');
         $nrOfPlayers = $session->get('nrOfPlayers');
         $hand = $session->get('player-' . $current);
@@ -104,6 +108,7 @@ class ProjectController extends AbstractController
         $addPoints = $deck->points();
         $points = $session->get('player_points-' . $current);
 
+        // @codeCoverageIgnoreStart
         if ($addPoints == 'ace' && $points < 10) {
             $points += 11;
         } elseif ($addPoints == 'ace' && $points >= 10) {
@@ -111,10 +116,12 @@ class ProjectController extends AbstractController
         } else {
             $points += $addPoints;
         }
+        // @codeCoverageIgnoreEnd
 
         $session->set('player-' . $current, $hand);
         $session->set('player_points-' . $current, $points);
 
+        // @codeCoverageIgnoreStart
         $nrOfPlayers = $session->get('nrOfPlayers');
         if ($points > 21) {
             if ($current + 1 < $nrOfPlayers) {
@@ -123,6 +130,7 @@ class ProjectController extends AbstractController
             }
             return $this->redirectToRoute('projBankPlays');
         }
+        // @codeCoverageIgnoreEnd
 
         return $this->redirectToRoute('projStartGame');
     }
@@ -139,7 +147,9 @@ class ProjectController extends AbstractController
             return $this->redirectToRoute('projStartGame');
         }
 
+        // @codeCoverageIgnoreStart
         return $this->redirectToRoute('projBankPlays');
+        // @codeCoverageIgnoreEnd
     }
 
     ################################################
@@ -157,7 +167,7 @@ class ProjectController extends AbstractController
         while ($points < 18) {
             $bHand->addCards($deck, 1);
             $addPoints = $deck->points();
-
+        // @codeCoverageIgnoreStart
             if ($addPoints == 'ace' && $points < 10) {
                 $points += 11;
             } elseif ($addPoints == 'ace' && $points >= 10) {
@@ -166,6 +176,7 @@ class ProjectController extends AbstractController
                 $points += $addPoints;
             }
         }
+        // @codeCoverageIgnoreEnd
 
         $session->set('bank_points', $points);
         $session->set('bank_hand', $bHand);

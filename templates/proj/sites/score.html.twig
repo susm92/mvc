@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Twenty-One Game{% endblock %}
+
+{% block body %}
+
+{% set winners = [] %}
+{% for player in players %}
+    {% if player.points <= 21 and (player.points > bank_points or bank_points > 21) %}
+        {% set winners = winners|merge([loop.index]) %}
+    {% endif %}
+{% endfor %}
+
+<h1>
+    {% if winners|length == 0 %}
+        Bank Wins!
+    {% else %}
+        Player Wins!
+    {% endif %}
+</h1>
+
+<p><strong>Bank</strong></p>
+<p>Points: {{ bank_points }} </p>
+<br>
+{% for card in bank_hand %}
+    <img class="cg-img" src="{{ asset('img/cards/' ~ card ~ '.svg') }}" alt="{{ card }}">
+{% endfor %}
+<br>
+
+<p>===================================================================</p>
+
+
+{% for player in players %}
+    <p><strong>Player -- Hand{{ loop.index }}</strong></p>
+    <p>Points: {{ player.points }} </p>
+    <br>
+    {% for card in player.hand %}
+        <img class="cg-img" src="{{ asset('img/cards/' ~ card ~ '.svg') }}" alt="{{ card }}">
+    {% endfor %}
+    <br>
+{% endfor %}
+
+<p>
+    <strong>Click on restart to play again, otherwise click on any of the links in the navbar.</strong>
+</p>
+
+<form method="post" action="">
+    <ul class="game-buttons">
+        <li>
+            <input type="submit" name="restart" value="Restart"
+                onClick="this.form.action='{{ path('projGame_restart') }}';"
+            >
+        </li>
+    </ul>
+</form>
+
+{% endblock %}

@@ -106,6 +106,13 @@ h3 {
   width: 800px;
 }
 
+.redirect {
+  font-size: 1rem;
+  font-family: cursive;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 .book_form > form {
   margin-bottom: 1rem;
 }

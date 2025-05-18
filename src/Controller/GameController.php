@@ -25,7 +25,9 @@ class GameController extends AbstractController
         return $this->render('game/doc.html.twig');
     }
 
-    ### Själva spelet! ###
+    ###########################################################
+    ###################### SJÄLVA SPELET ######################
+    ###########################################################
 
     #[Route('game/init', name: 'init')]
     public function start(): Response

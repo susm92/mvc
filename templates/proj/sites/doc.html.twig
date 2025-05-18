@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Dokumentation - BlackJack{% endblock %}
+
+{% block body %}
+<h1>Dokumentation kring mitt projekt - Black Jack.</h1>
+
+<p>
+    Till mitt projekt har jag valt att bygga vidare på min kod och implementera spelet Black Jack. 
+</p>
+
+<h2>Generella tankar kring följande spel.</h2>
+
+<p>
+    Tankarna kring spelet här är att man skall kunna spela mellan 1 - 3 händer samtidigt mot banken, reglerna kring Black Jack är ganska simpla överlag (nedan är information taget från <a href="https://sv.wikipedia.org/wiki/Black_Jack">Wikipedia</a>):
+    <br><br>
+    <em>Spelet går ut på att komma så nära talet 21 som möjligt utan att bli "tjock", det vill säga få över 21. Man måste dessutom ha bättre kort än dealern. Alla klädda kort är värda 10, ess är 11 eller 1. Om spelarens 2 första kort är ett ess och ett klätt kort/en 10:a kallas det Black Jack och ger en och en halv gånger insatsen, såvida inte dealern också får Black Jack. Får spelaren Black Jack, och dealern har ess som första kort kan spelaren välja att ta "jämna pengar", det vill säga få vinst lika stor som insatsen.
+    <br><br>
+    Om både spelare och dealer har 17, 18 eller 19 så vinner dealern, har både spelare och dealer 20 eller 21 så blir det lika, dvs ingen vinst till spelaren men spelaren blir heller inte av med sin insats. Hos kasinon generellt gäller dock att 17, 18, 19, 20 eller 21 innebär "push", det vill säga att man behåller sin insats. Denna regel har ganska stor betydelse för bankens statistiska övertag, ett par procent.
+    <br><br>
+    Spelaren satsar valfritt belopp i sin spelruta före en giv. Det brukar finnas gränser både uppåt och nedåt. Dealern ger först ut två öppna kort till varje spelare. Till sig själv delar dealern ut ett kort.
+    <br><br>
+    Spelarna får nu välja om de vill ha fler kort eller stanna. När spelarna valt klart drar dealern kort. Dealern måste stanna på 17 eller bättre och ta kort om det är under 17. Dealen måste stanna även om denna har exempelvis ess och 6:a dvs 7/17.</em>
+</p>
+
+<p class="redirect">
+    <a href="{{ path('project') }}">Tillbaka</a>
+</p>
+
+{% endblock %}

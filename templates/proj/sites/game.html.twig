@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Black Jack - Player {{ player }}{% endblock %}
+
+{% block body %}
+
+<h1>Black Jack [Player {{ player }} of {{ nrOfPlayers }}]</h1>
+
+{% if hand is not empty %}
+    <p>Cards in hand:</p>
+    {% for card in hand %}
+        <img class="cg-img" src="{{ asset('img/cards/' ~ card ~ '.svg') }}" alt="{{ card }}">
+    {% endfor %}
+{% else %}
+    <p>Please start by drawing a card from the deck.</p>
+{% endif %}
+
+<p>Current points in hand: {{ points }}</p>
+
+<br><br>
+
+{% if points <= 21 %}
+    <p>What do you wish to do?</p>
+    <form method="post" action="">
+        <ul class="game-buttons">
+            <li>
+                <input type="submit" name="draw" value="Draw"
+                    onClick="this.form.action='{{ path('proj_draw') }}';">
+            </li>
+            <li>
+                <input type="submit" name="hold" value="Hold"
+                    onClick="this.form.action='{{ path('proj_hold') }}';">
+            </li>
+        </ul>
+    </form>
+{% else %}
+    <p>
+        <strong>You are above 21 and have automatically lost.</strong>
+    </p>
+    <form method="post" action="">
+        <ul class="game-buttons">
+            <li>
+                <input type="submit" name="restart" value="Restart"
+                    onClick="this.form.action='{{ path('projGame_restart') }}';">
+            </li>
+        </ul>
+    </form>
+{% endif %}
+
+{% endblock %}

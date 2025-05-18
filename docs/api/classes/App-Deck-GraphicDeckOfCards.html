@@ -67,6 +67,14 @@
                 <a href="namespaces/app-deck.html" class="">Deck</a>
                 
             </li>
+                    <li>
+                <a href="namespaces/app-entity.html" class="">Entity</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-repository.html" class="">Repository</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -142,7 +150,7 @@
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/App-Deck-GraphicDeckOfCards.html#property_cardValue">$cardValue</a>
     <span>
-                        &nbsp;: <abbr title="\App\Deck\cardValue">cardValue</abbr>            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
@@ -158,7 +166,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Constructor method for class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Deck-GraphicDeckOfCards.html#method_addCard">addCard()</a>
@@ -186,10 +194,12 @@ The assigned value is later removed from @var value[].</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Deck-Card.html#method_getCardValue">getCardValue()</a>
     <span>
-                                &nbsp;: null    </span>
+                                &nbsp;: string|null    </span>
 </dt>
 <dd>Real getter function for the @var cardvalue
-Only used for testing purpose.</dd>
+Only used for testing purpose..
+
+returns null if not assigned, otherwise a string.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Deck-GraphicDeckOfCards.html#method_points">points()</a>
@@ -208,7 +218,7 @@ Only used for testing purpose.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Deck-Card.html#method_showValue">showValue()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: string|null    </span>
 </dt>
 <dd>Returns the current value of @var cardValue
 Can be seen as a &#039;getter&#039; function</dd>
@@ -255,7 +265,7 @@ Can be seen as a &#039;getter&#039; function</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\App\Deck\cardValue">cardValue</abbr></span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$cardValue</span>
     </code>
 
@@ -324,13 +334,13 @@ Can be seen as a &#039;getter&#039; function</dd>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constructor method for class.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -398,7 +408,7 @@ used for testing</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Deck/Card.php"><a href="files/src-deck-card.html"><abbr title="src/Deck/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -432,7 +442,7 @@ The assigned value is later removed from @var value[].</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Deck/Card.php"><a href="files/src-deck-card.html"><abbr title="src/Deck/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -465,25 +475,25 @@ The assigned value is later removed from @var value[].</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Deck/Card.php"><a href="files/src-deck-card.html"><abbr title="src/Deck/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Real getter function for the @var cardvalue
-Only used for testing purpose.</p>
+Only used for testing purpose..
+
+returns null if not assigned, otherwise a string.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCardValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null</span></code>
+                    <span class="phpdocumentor-signature__name">getCardValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
-        <section class="phpdocumentor-description"><p>.</p>
-</section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">null</span>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
         
     
@@ -567,7 +577,7 @@ Only used for testing purpose.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Deck/Card.php"><a href="files/src-deck-card.html"><abbr title="src/Deck/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -576,14 +586,14 @@ Can be seen as a &#039;getter&#039; function</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">showValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">showValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
         
     

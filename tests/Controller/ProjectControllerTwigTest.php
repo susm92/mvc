@@ -41,7 +41,7 @@ class ProjectControllerTest extends WebTestCase
     public function testProjectInitPost(): void
     {
         $client = static::createClient();
-        $client->request('POST', '/proj/init', ['nrOfPlayers' => 2]);
+        $client->request('POST', '/proj/init', ['nrOfPlayers' => 2, 'name' => 'TestPlayer']);
         $this->assertResponseRedirects('/proj/game');
     }
 
@@ -55,33 +55,34 @@ class ProjectControllerTest extends WebTestCase
     public function testProjectGameFlow(): void
     {
         $client = static::createClient();
-        // Start game with 2 players
-        $client->request('POST', '/proj/init', ['nrOfPlayers' => 2]);
+        $client->request('POST', '/proj/init', ['nrOfPlayers' => 2, 'name' => 'TestPlayer']);
         $client->followRedirect();
         $this->assertSelectorExists('body');
 
-        // Draw card
         $client->request('POST', '/proj/draw');
         $this->assertTrue(
             $client->getResponse()->isRedirection() ||
             $client->getResponse()->isSuccessful()
         );
 
-        // Hold
+        $client->request('POST', '/proj/bet');
+        $this->assertTrue(
+            $client->getResponse()->isRedirection() ||
+            $client->getResponse()->isSuccessful()
+        );
+
         $client->request('POST', '/proj/hold');
         $this->assertTrue(
             $client->getResponse()->isRedirection() ||
             $client->getResponse()->isSuccessful()
         );
 
-        // Bank plays
         $client->request('GET', '/proj/bank_plays');
         $this->assertTrue(
             $client->getResponse()->isRedirection() ||
             $client->getResponse()->isSuccessful()
         );
 
-        // Score
         $client->request('GET', '/proj/score');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('body');

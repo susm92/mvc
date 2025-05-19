@@ -4,7 +4,15 @@
 
 {% block body %}
 
-<h1>Black Jack [Hand {{ player }} of {{ nrOfPlayers }}]</h1>
+<h1>Black Jack - {{ player_name }} [Hand {{ player }} of {{ nrOfPlayers }}]</h1>
+
+
+
+{% if player_bet is not empty %}
+    <p><strong>Current bet: {{ player_bet }} credits</strong></p>
+{% else %}
+    <p><strong>Current bet: 0 credits</strong></p>
+{% endif %}
 
 {% if hand is not empty %}
     <p>Cards in hand:</p>
@@ -30,6 +38,10 @@
             <li>
                 <input type="submit" name="hold" value="Hold"
                     onClick="this.form.action='{{ path('proj_hold') }}';">
+            </li>
+            <li>
+                <input type="submit" name="bet" value="Bet"
+                    onClick="this.form.action='{{ path('proj_bet') }}';">
             </li>
         </ul>
     </form>

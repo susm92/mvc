@@ -331,6 +331,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_hold"
         },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003Abet\u0028\u0029",
+            "name": "bet",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_bet"
+        },                {
             "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AbankPlays\u0028\u0029",
             "name": "bankPlays",
             "summary": "",

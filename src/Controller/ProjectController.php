@@ -59,9 +59,12 @@ class ProjectController extends AbstractController
         Request $request
     ): Response {
         $nrOfPlayers = $request->get('nrOfPlayers');
+        $playerName = $request->get('name');
         $session->set('deck', new GraphicDeckOfCards());
         $session->set('nrOfPlayers', $nrOfPlayers);
         $session->set('current_player', 0);
+        $session->set('player_bet', 0);
+        $session->set('player_name', $playerName);
 
 
         for ($i=0; $i<$nrOfPlayers; $i++) {
@@ -91,6 +94,8 @@ class ProjectController extends AbstractController
             'hand' => $hand->showCards(),
             'points' => $points,
             'nrOfPlayers' => $nrOfPlayers,
+            'player_name' => $session->get('player_name'),
+            'player_bet' => $session->get('player_bet'),
         ];
 
         return $this->render('proj/sites/game.html.twig', $data);
@@ -152,6 +157,17 @@ class ProjectController extends AbstractController
         // @codeCoverageIgnoreEnd
     }
 
+    #[Route('proj/bet', name: 'proj_bet', methods: ['POST'])]
+    public function bet(
+        SessionInterface $session
+    ): Response {
+        $bet = $session->get('player_bet');
+        $bet += 5;
+        $session->set('player_bet', $bet);
+
+        return $this->redirectToRoute('projStartGame');
+    }
+
     ################################################
     ###################  DEALER  ###################
     ################################################
@@ -167,7 +183,7 @@ class ProjectController extends AbstractController
         while ($points < 18) {
             $bHand->addCards($deck, 1);
             $addPoints = $deck->points();
-        // @codeCoverageIgnoreStart
+            // @codeCoverageIgnoreStart
             if ($addPoints == 'ace' && $points < 10) {
                 $points += 11;
             } elseif ($addPoints == 'ace' && $points >= 10) {
@@ -201,6 +217,8 @@ class ProjectController extends AbstractController
             'players' => $players,
             'bank_hand' => $session->get('bank_hand')->showCards(),
             'bank_points' => $session->get('bank_points'),
+            'player_name' => $session->get('player_name'),
+            'player_bet' => $session->get('player_bet'),
         ];
 
         return $this->render('proj/sites/score.html.twig', $data);

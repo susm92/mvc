@@ -94,4 +94,19 @@
         <br><br>
         Min til till denna gången är 'clean code', PhpMetrics, Scrutinizer, re-Factoring av kod.
     </p>
+
+    <h2 id="kmom10">kmom10</h2>
+    <p>
+        I och med detta inlämnade projekt avslutar jag min sista kvarvarande kurs i dbwebb, resan har varit lång men oerhört givande, det skall bli oerhört skönt att få avsluta följande del i kapitlet som heter BTH-studier.
+        <br><br>
+        Tittar vi igenom mitt projekt hittar vi att jag i dagsläget avklarat grunden för att slutföra projektet och det är då krav <strong>1-3</strong>. Jag kommer i nedan stycke lite snabbt gå igenom hur jag gjort för att åstadkomma detta.
+        <br><br>
+        Där har skapats en ny controller och routes som hanterar project delen, controllern döpte jag till ProjectController.php och den hittas under övriga Controllers. För att hålla det simplet för min del och då det var ett tag sedan jag satt med följande kod, valde jag att kopiera GameController klassen rakt av och bara bygga vidare på den. Där har jag sedan då lagt till en ny route som hanterar twig filerna för projectet där jag implementerat ett blackjack spel, där användaren får skriva in sitt namn och numera kan betta, samt att man kan spela upp emot 3 händer samtidigt mot "datorn". Beroende på antalet händer som skickas upp till init, så körs en for loop igenom och då instansierar antalet CardHand klasser och kopplar det till antalet sessioner, detta är dock främst gammal kod som re-faktorerats genom mindre ändringar i kodbasen.
+        <br><br>
+        För att hantera spelet använder jag mig av liknande sessioner och uppsättning som i tidigare GameController, men jag har enbart byggt ut så att beroende på antalet händer man spelar så skapas antalet sessioner som sätts i sessioner och sedan kallas på mellan de olika routsen. Utöver detta så har jag även uppdaterat docs/ med dokumentation kring ProjectController och de olika funktionerna/ metoderna som finns i just den klassen, jag har även gått igenom Scrutinizer så att min kod ligger på en stadig 9.96 i kodkvalite, och min nya controller klass har värdet A enligt detta mätverktyg. Där går även via detta att se att min overall code coverage ökat från 26% på all kod till 40% i dagsläget, detta då jag lagt till 100% kodtäckning på ProjectController klassen.
+        <br><br>
+        Projektet gick ändå ganska smidigt att slutföra, för min del hade jag jättegärna velat jobba om en hel del av min kod, och i efterhand ser jag även att jag egentligen hade kunnat skapa en ärvd klass med anpassad funktionalitet till black jack istället för att kopiera tidigare klass rakt av.
+        <br><br>
+        Jag anser att detta projekt är ett bra avslut på kursen, det kan dock bli lite väl svårt beroende på vilket typ av projekt man väljer, men utöver det så är det väl ett värdigt slut i mina ögon. Om jag måste vara kritisk så anser jag att det kan bli oerhört stort eller väl repetetivt om man fortsätter på kortspelen, men där är fördelen att man kan ta till något annat om man känner för det. Jag är överlag oerhört nöjd med dbwebb-teamet men med det sagt skall det bli oerhört skönt att få detta avklarat.
+    </p>
 {% endblock %}
